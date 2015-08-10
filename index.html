@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="portfolioApp">
 <head>
 	<meta charset="utf-8">
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
@@ -7,34 +7,37 @@
 	<!-- <meta name="description" content=""> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- angular libs -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<!-- <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script> -->
+
+	<!-- Modules -->
+	<script src="js/app.js"></script>
+
 	<!-- Custom css -->
 	<link rel="stylesheet" href="css/app.css">
 
 	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-	<!-- angular libs -->
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 </head>
 <body>
-	<div ng-view></div>
+	<!-- <div ng-view></div> -->
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-2 col-md-offset-5">
-				<h1>Test</h1>
+	<div ng-controller="PresentationController as presentation">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-md-offset-5" style="text-align: center;">
+					<h1>Hey</h1>
+					<p>My name is {{ presentation.text }}</p>
+				</div>
 			</div>
 		</div>
 	</div>
-
-
-	<!-- Modules -->
-	<script src="js/app.js"></script>
 
 </body>
 </html>
