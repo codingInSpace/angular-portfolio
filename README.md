@@ -1,2 +1,1 @@
-# portfolio
-personal page
+personal page, using AngularJS, bootstrap
