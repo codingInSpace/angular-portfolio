@@ -14,8 +14,6 @@
 	<!-- Modules -->
 	<script src="js/app.js"></script>
 
-	<!-- Custom css -->
-	<link rel="stylesheet" href="css/app.css">
 
 	<!-- jquery -->
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
@@ -23,12 +21,25 @@
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	<!-- Pure css -->
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+	<!-- Custom css -->
+	<link rel="stylesheet" href="css/app.css">
 
 </head>
 <body>
-	<h1>Jonathan Grangien</h1>
-	<a href="#/">Home</a> |
-  	<a href="#projects">My Projects</a>
+	<div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal">
+            <!-- <a class="pure-menu-heading hidden-xs" style="text-decoration: none">Jonathan Grangien</a> -->
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item pure-menu-selected"><a href="#/" class="pure-menu-link">Presentation</a></li>
+                <li class="pure-menu-item"><a href="#projects" class="pure-menu-link">My Projects</a></li>
+            </ul>
+        </div>
+    </div>
 
 	<div ng-view></div>
 
