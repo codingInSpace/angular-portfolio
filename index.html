@@ -16,7 +16,7 @@
 
 
 	<!-- jquery -->
-	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -32,11 +32,13 @@
 <body>
 	<div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal">
-            <!-- <a class="pure-menu-heading hidden-xs" style="text-decoration: none">Jonathan Grangien</a> -->
-
             <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-selected"><a href="#/" class="pure-menu-link">Presentation</a></li>
-                <li class="pure-menu-item"><a href="#projects" class="pure-menu-link">My Projects</a></li>
+                <li id="presentation-link" class="pure-menu-item pure-menu-selected">
+                	<a href="#/" class="pure-menu-link">Presentation</a>
+                </li>
+                <li id="projects-link" class="pure-menu-item">
+                	<a href="#/projects" class="pure-menu-link">My Projects</a>
+                </li>
             </ul>
         </div>
     </div>
