@@ -12,10 +12,10 @@
 .home-menu {
     padding: 0.5em;
     text-align: center;
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+    /*box-shadow: 0 1px 1px rgba(0,0,0, 0.10);*/
 }
 .home-menu {
-    background: #2d3e50;
+    /*background: rgb(37, 147, 147);*/
 }
 
 .home-menu .pure-menu-heading {
