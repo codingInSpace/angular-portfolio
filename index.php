@@ -54,7 +54,7 @@
     <div ng-controller="PresentationController as presentation">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 pull-left">
+				<div class="col-md-5 pull-left">
 					<h1>About me</h1>
 					<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham. </p>
 
