@@ -39,11 +39,39 @@
                 <li id="projects-link" class="pure-menu-item">
                 	<a href="#/projects" class="pure-menu-link">My Projects</a>
                 </li>
+                <li id="projects-link" class="pure-menu-item">
+                	<a href="#/projects" class="pure-menu-link">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
 
-	<div ng-view></div>
+    <div ng-controller="PresentationController as presentation">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 pull-left">
+					<h1>About me</h1>
+					<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham. </p>
+
+					<p>Meatloaf ham hock kielbasa tenderloin t-bone fatback landjaeger shankle sausage ball tip pancetta tri-tip hamburger venison. Beef ball tip sirloin tenderloin. Shank brisket jowl tail kevin leberkas shankle landjaeger kielbasa drumstick tongue.</p>
+				</div>
+				<div class="col-md-5 pull-right">
+					<img src="img/seriousman.jpg" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-controller="ProjectsController as projects">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-md-offset-5" style="text-align: center;">
+					<h1>My projects</h1>
+					<p>{{ projects.text }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
