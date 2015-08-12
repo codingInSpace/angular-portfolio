@@ -34,7 +34,7 @@
         <div class="home-menu pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
                 <li id="presentation-link" class="pure-menu-item pure-menu-selected">
-                	<a href="#/" class="pure-menu-link">Presentation</a>
+                	<a href="#/" class="pure-menu-link">About</a>
                 </li>
                 <li id="projects-link" class="pure-menu-item">
                 	<a href="#/projects" class="pure-menu-link">My Projects</a>
