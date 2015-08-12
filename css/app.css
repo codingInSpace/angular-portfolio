@@ -1,3 +1,8 @@
+/*override bootcards default*/
+body {
+    padding-top: 0;
+    /*background: #f5f5f5;*/
+}
 
 /* MENU STYLE */
 .header .pure-menu {

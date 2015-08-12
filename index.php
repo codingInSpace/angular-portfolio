@@ -18,12 +18,17 @@
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<!-- Bootstrap -->
+	<!-- Bootstrap and Bootcards-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/css/bootcards-desktop.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/js/bootcards.min.js"></script>
 	
 	<!-- Pure css -->
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+	<!-- Icons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 	<!-- Custom css -->
 	<link rel="stylesheet" href="css/app.css">
@@ -67,9 +72,96 @@
 			<div class="row">
 				<div class="col-md-2 col-md-offset-5" style="text-align: center;">
 					<h1>My projects</h1>
-					<p>{{ projects.text }}</p>
 				</div>
 			</div>
+
+			<div class="row">
+
+				<!-- Galaxy Goose -->
+				<div class="col-md-4">
+					<div class="panel panel-default bootcards-media">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Galaxy Goose</h3>
+					  </div>
+					  <div class="panel-body">
+					  	An experimental WebGL application where you can create and customize planets interactively. (WIP)
+					  </div>
+					  <img src="img/galaxygoose1.png" class="img-responsive"/>
+					  <div class="panel-body">
+					  Team of five.
+					  </div>
+					  <div class="panel-footer">
+					    <div class="btn-group btn-group-justified">
+					      <div class="btn-group">
+					        <a class="btn btn-default" href="https://codinginspace.github.io/myGalaxy" target="_blank">
+					          <i class="fa fa-lg fa-external-link"></i>
+					          Try it!
+					        </a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default" href="https://github.com/codingInSpace/myGalaxy" target="_blank">
+					          <i class="fa fa-lg fa-github"></i>
+					          Source
+					        </a>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+
+				<!-- Mapus -->
+				<div class="col-md-4">
+					<div class="panel panel-default bootcards-media">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Mapus</h3>
+					  </div>
+					  <div class="panel-body">
+					  An Android app for students to use for quickly communicating where to meet to study, with the help of interactive maps. (WIP)
+					  </div>
+					  <img src="img/mapus1.png" class="img-responsive" />
+					  <div class="panel-body">
+					  Team of five.
+					  </div>
+					  <div class="panel-footer">
+					    <div class="btn-group btn-group-justified">
+					      <div class="btn-group">
+					        <a class="btn btn-default" href="https://github.com/sovanny/Mapus" target="_blank">
+					          <i class="fa fa-lg fa-github"></i>
+					          Source
+					        </a>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+
+				<!-- GetBusy -->
+				<div class="col-md-4">
+					<div class="panel panel-default bootcards-media">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Get Busy</h3>
+					  </div>
+					  <div class="panel-body">
+					  	A mobile app for "gamifying" your motivation to achieve daily goals, built to try meteor.js. (WIP) 
+					  </div>
+					  <img src="img/getbusy1.png" class="img-responsive" />
+					  <div class="panel-body">
+					  Personal project.
+					  </div>
+					  <div class="panel-footer">
+					    <div class="btn-group btn-group-justified">
+					      <div class="btn-group">
+					        <a class="btn btn-default" href="https://getbusy.meteor.com" target="_blank">
+					          <i class="fa fa-lg fa-external-link"></i>
+					          Try it!
+					        </a>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 
