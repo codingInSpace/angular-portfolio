@@ -91,7 +91,10 @@
 						  <div class="panel-body">
 						  	{{ project.teamDesc }}
 						  </div>
-						  <div class="panel-footer">
+
+						  <project-card-buttons item="project"></project-card-buttons>
+						  
+						  <!-- <div class="panel-footer">
 						    <div class="btn-group btn-group-justified">
 						      <div class="btn-group">
 						        <a class="btn btn-default" ng-href="{{ project.tryLink }}" target="_blank">
@@ -106,8 +109,10 @@
 						        </a>
 						      </div>
 						    </div>
-						  </div>
+						  </div> -->
+
 						</div>
+
 					</div>
 				</div>
 

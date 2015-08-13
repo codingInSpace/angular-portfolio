@@ -46,7 +46,8 @@ angular.module('portfolioApp', [])
 				sourceLinkDesc: ""
 			}
 
-		];
+		]
+
 
 		// var toggleSelected = function() {
 		// 	$('#presentation-link').removeClass("pure-menu-selected");
@@ -54,4 +55,15 @@ angular.module('portfolioApp', [])
 		// }
 
 		// toggleSelected();
+	})
+	
+	.directive('projectCardButtons', function() {
+		return {
+			restrict: "E",
+			replace: false,
+			scope: {
+				item: "="
+			},
+			templateUrl: "js/directives/projectCardButtons.html"
+		}
 	});
