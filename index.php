@@ -77,89 +77,40 @@
 
 			<div class="row">
 
-				<!-- Galaxy Goose -->
-				<div class="col-md-4">
-					<div class="panel panel-default bootcards-media">
-					  <div class="panel-heading">
-					    <h3 class="panel-title">Galaxy Goose</h3>
-					  </div>
-					  <div class="panel-body">
-					  	An experimental WebGL application where you can create and customize planets interactively. (WIP)
-					  </div>
-					  <img src="img/galaxygoose1.png" class="img-responsive"/>
-					  <div class="panel-body">
-					  Team of five.
-					  </div>
-					  <div class="panel-footer">
-					    <div class="btn-group btn-group-justified">
-					      <div class="btn-group">
-					        <a class="btn btn-default" href="https://codinginspace.github.io/myGalaxy" target="_blank">
-					          <i class="fa fa-lg fa-external-link"></i>
-					          Try it!
-					        </a>
-					      </div>
-					      <div class="btn-group">
-					        <a class="btn btn-default" href="https://github.com/codingInSpace/myGalaxy" target="_blank">
-					          <i class="fa fa-lg fa-github"></i>
-					          Source
-					        </a>
-					      </div>
-					    </div>
-					  </div>
+				<!-- Project cards -->
+				<div ng-repeat="project in projects.myProjects">
+					<div class="col-md-4">
+						<div class="panel panel-default bootcards-media">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">{{ project.title }}</h3>
+						  </div>
+						  <div class="panel-body">
+						  	{{ project.description }}
+						  </div>
+						  <img ng-src="{{ project.image }}" class="img-responsive"/>
+						  <div class="panel-body">
+						  	{{ project.teamDesc }}
+						  </div>
+						  <div class="panel-footer">
+						    <div class="btn-group btn-group-justified">
+						      <div class="btn-group">
+						        <a class="btn btn-default" ng-href="{{ project.tryLink }}" target="_blank">
+						          <i class="fa fa-lg fa-external-link"></i>
+						          {{ project.tryLinkDesc }}
+						        </a>
+						      </div>
+						      <div class="btn-group">
+						        <a class="btn btn-default" ng-href="{{ project.sourceLink }}" target="_blank">
+						          <i class="fa fa-lg fa-github"></i>
+						          {{ project.sourceLinkDesc }}
+						        </a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
 					</div>
 				</div>
 
-				<!-- Mapus -->
-				<div class="col-md-4">
-					<div class="panel panel-default bootcards-media">
-					  <div class="panel-heading">
-					    <h3 class="panel-title">Mapus</h3>
-					  </div>
-					  <div class="panel-body">
-					  An Android app for students to use for quickly communicating where to meet to study, with the help of interactive maps. (WIP)
-					  </div>
-					  <img src="img/mapus1.png" class="img-responsive" />
-					  <div class="panel-body">
-					  Team of five.
-					  </div>
-					  <div class="panel-footer">
-					    <div class="btn-group btn-group-justified">
-					      <div class="btn-group">
-					        <a class="btn btn-default" href="https://github.com/sovanny/Mapus" target="_blank">
-					          <i class="fa fa-lg fa-github"></i>
-					          Source
-					        </a>
-					      </div>
-					    </div>
-					  </div>
-					</div>
-				</div>
-
-				<!-- GetBusy -->
-				<div class="col-md-4">
-					<div class="panel panel-default bootcards-media">
-					  <div class="panel-heading">
-					    <h3 class="panel-title">Get Busy</h3>
-					  </div>
-					  <div class="panel-body">
-					  	A mobile app for "gamifying" your motivation to achieve daily goals, built to try meteor.js. (WIP) 
-					  </div>
-					  <img src="img/getbusy1.png" class="img-responsive" />
-					  <div class="panel-body">
-					  Personal project.
-					  </div>
-					  <div class="panel-footer">
-					    <div class="btn-group btn-group-justified">
-					      <div class="btn-group">
-					        <a class="btn btn-default" href="https://getbusy.meteor.com" target="_blank">
-					          <i class="fa fa-lg fa-external-link"></i>
-					          Try it!
-					        </a>
-					      </div>
-					    </div>
-					  </div>
-					</div>
-				</div>
 			</div>
 
 		</div>
