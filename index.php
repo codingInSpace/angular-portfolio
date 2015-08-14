@@ -18,6 +18,9 @@
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+	<!-- windows -->
+	<script src="js/jquery.windows.js"></script>
+
 	<!-- Bootstrap and Bootcards-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/css/bootcards-desktop.min.css">
@@ -35,6 +38,8 @@
 
 </head>
 <body>
+
+	<section id="0" class="window">
 	<div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
@@ -66,7 +71,9 @@
 			</div>
 		</div>
 	</div>
+	</section>
 
+	<section id="1" class="window">
 	<div ng-controller="ProjectsController as projects">
 		<div class="container">
 			<div class="row">
@@ -120,6 +127,25 @@
 
 		</div>
 	</div>
+	</section>
+
+	<script>
+
+	    $(document).ready(function(){
+
+	        var $windows = $('.window');
+
+	        $windows.windows({
+	            snapping: true,
+	            snapSpeed: 500,
+	            snapInterval: 1100,
+	            onScroll: function(s){},
+	            onSnapComplete: function($el){},
+	            onWindowEnter: function($el){}
+	        });
+
+	    });
+	</script>
 
 </body>
 </html>
