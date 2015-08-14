@@ -61,7 +61,7 @@
 					<p>Meatloaf ham hock kielbasa tenderloin t-bone fatback landjaeger shankle sausage ball tip pancetta tri-tip hamburger venison. Beef ball tip sirloin tenderloin. Shank brisket jowl tail kevin leberkas shankle landjaeger kielbasa drumstick tongue.</p>
 				</div>
 				<div class="col-md-5 pull-right">
-					<img src="img/seriousman.jpg" class="hidden-xs" />
+					<img src="img/seriousman.jpg" class="hidden-xs img-circle" />
 				</div>
 			</div>
 		</div>
