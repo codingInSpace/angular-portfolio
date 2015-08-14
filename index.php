@@ -54,7 +54,7 @@
     <div ng-controller="PresentationController as presentation">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5 pull-left">
+				<div class="col-md-5">
 					<h1>About me</h1>
 					<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham. </p>
 
@@ -79,7 +79,7 @@
 
 				<!-- Project cards -->
 				<div ng-repeat="project in projects.myProjects">
-					<div class="col-md-4">
+					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0">
 						<div class="panel panel-default bootcards-media">
 						  <div class="panel-heading">
 						    <h3 class="panel-title">{{ project.title }}</h3>
