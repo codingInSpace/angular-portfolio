@@ -67,7 +67,7 @@
 		</div>
 	</div>
 
-	<div ng-controller="ProjectsController as projects">
+	<div class="projects" ng-controller="ProjectsController as projects">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2 col-md-offset-5" style="text-align: center;">
@@ -93,26 +93,7 @@
 						  </div>
 
 						  <project-card-buttons item="project"></project-card-buttons>
-						  
-						  <!-- <div class="panel-footer">
-						    <div class="btn-group btn-group-justified">
-						      <div class="btn-group">
-						        <a class="btn btn-default" ng-href="{{ project.tryLink }}" target="_blank">
-						          <i class="fa fa-lg fa-external-link"></i>
-						          {{ project.tryLinkDesc }}
-						        </a>
-						      </div>
-						      <div class="btn-group">
-						        <a class="btn btn-default" ng-href="{{ project.sourceLink }}" target="_blank">
-						          <i class="fa fa-lg fa-github"></i>
-						          {{ project.sourceLinkDesc }}
-						        </a>
-						      </div>
-						    </div>
-						  </div> -->
-
 						</div>
-
 					</div>
 				</div>
 
