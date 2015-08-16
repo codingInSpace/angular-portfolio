@@ -44,9 +44,19 @@ angular.module('portfolioApp', [])
 				tryLinkDesc: "Try it!",
 				sourceLink: "",
 				sourceLinkDesc: ""
+			},
+			{
+				title: "This page",
+				description: "Personal page, built with AngularJS for learning purposes",
+				image: "",
+				teamDesc: "Personal project",
+				tryLink: "",
+				tryLinkDesc: "",
+				sourceLink: "https://github.com/codingInSpace/portfolio",
+				sourceLinkDesc: "Source"
 			}
 
-		]
+		];
 
 
 		// var toggleSelected = function() {
