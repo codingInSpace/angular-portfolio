@@ -14,9 +14,11 @@
 	<!-- Modules -->
 	<script src="js/app.js"></script>
 
-
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- WOW -->
+	<script src="js/wow.min.js"></script>
 
 	<!-- Bootstrap and Bootcards-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -24,10 +26,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/js/bootcards.min.js"></script>
 	
-	<!-- Pure css -->
+	<!-- CSS imports -->
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-
-	<!-- Icons -->
+	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 	<!-- Custom css -->
@@ -35,6 +36,10 @@
 
 </head>
 <body>
+	<script>
+	new WOW().init();
+	</script>
+
 	<div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
@@ -80,19 +85,21 @@
 				<!-- Project cards -->
 				<div ng-repeat="project in projects.myProjects">
 					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0">
-						<div class="panel panel-default bootcards-media">
-						  <div class="panel-heading">
-						    <h3 class="panel-title">{{ project.title }}</h3>
-						  </div>
-						  <div class="panel-body">
-						  	{{ project.description }}
-						  </div>
-						  <img ng-src="{{ project.image }}" class="img-responsive"/>
-						  <div class="panel-body">
-						  	{{ project.teamDesc }}
-						  </div>
+						<div class="wow fadeIn">
+							<div class="panel panel-default bootcards-media">
+							  <div class="panel-heading">
+							    <h3 class="panel-title">{{ project.title }}</h3>
+							  </div>
+							  <div class="panel-body">
+							  	{{ project.description }}
+							  </div>
+							  <img ng-src="{{ project.image }}" class="img-responsive"/>
+							  <div class="panel-body">
+							  	{{ project.teamDesc }}
+							  </div>
 
-						  <project-card-buttons item="project"></project-card-buttons>
+							  <project-card-buttons item="project"></project-card-buttons>
+							</div>
 						</div>
 					</div>
 				</div>
