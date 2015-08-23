@@ -44,11 +44,9 @@
 	<script>
 	$(document).ready(function() {
 	    $('#fullpage').fullpage({
-	    	//Scrolling
-	    	scrollOverflow: true,
-
-	    	// Design
-	    	sectionsColor: ['#D6EBE0', '#fff']
+	    	anchors: ['', 'projects', 'contact'],
+	    	sectionsColor: ['#D6EBE0', '#fff', '#313131'],
+	    	scrollOverflow: true
 	    });
 	});
 
@@ -93,7 +91,7 @@
 		</div>
 
 		<div class="section">
-			<br>
+			<br><br><br>
 			<div ng-controller="ProjectsController as projects">
 				<div class="container">
 					<div class="row">
@@ -126,6 +124,35 @@
 			</div>
 		</div>
 
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<!-- mail form -->
+					<div class="col-sm-4">
+						<div class="contact-text">
+							<h2>Send an email</h2>
+							<p>jonathan.grangien@gmail.com</p>
+							<form method="POST">
+								<label for="mail-field">Your email</label><br>
+								<input type="text" name="mail-field"><br>
+								<label for="msg-field">Message</label><br>
+								<input type="textarea" name="msg-field"><br>
+								<input type="submit" value="Send message">
+							</form>
+						</div>
+					</div>
+
+					<!-- links -->
+					<div class="col-sm-4">
+						<div class="contact-text">
+							<h2>Follow Me</h2>
+							<p>link link link</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
 
 </body>

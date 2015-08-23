@@ -49,6 +49,10 @@ body {
     color: #AECFE5;
 }
 
+.contact-text {
+    color: white;
+}
+
 /* TABLET AND UP */
 @media (min-width: 48em) {
     body {
