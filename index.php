@@ -46,7 +46,10 @@
 	    $('#fullpage').fullpage({
 	    	anchors: ['top', 'projects', 'contact'],
 	    	sectionsColor: ['', '#fff', '#313131'],
-	    	scrollOverflow: true
+	    	scrollOverflow: true,
+	    	navigation: true,
+			navigationPosition: 'right',
+			navigationTooltips: ['Top', 'Projects', 'Contact']
 	    });
 	});
 
