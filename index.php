@@ -49,7 +49,32 @@
 	    	scrollOverflow: true,
 	    	navigation: true,
 			navigationPosition: 'right',
-			navigationTooltips: ['Top', 'Projects', 'Contact']
+			navigationTooltips: ['Top', 'Projects', 'Contact'],
+			onLeave: function(index, nextIndex, direction) {
+				switch (index) {
+					case 1:
+						$("#presentation-link").removeClass("pure-menu-selected");
+						break;
+					case 2:
+						$("#projects-link").removeClass("pure-menu-selected");
+						break;
+					case 3:
+						$("#contacts-link").removeClass("pure-menu-selected");
+						break;
+				}
+
+				switch (nextIndex) {
+					case 1:
+						$("#presentation-link").addClass("pure-menu-selected");
+						break;
+					case 2:
+						$("#projects-link").addClass("pure-menu-selected");
+						break;
+					case 3:
+						$("#contacts-link").addClass("pure-menu-selected");
+						break;
+				}
+			}
 	    });
 	});
 
@@ -67,7 +92,7 @@
                 <li id="projects-link" class="pure-menu-item">
                 	<a href="#projects" class="pure-menu-link">My Projects</a>
                 </li>
-                <li id="projects-link" class="pure-menu-item">
+                <li id="contacts-link" class="pure-menu-item">
                 	<a href="#contact" class="pure-menu-link">Contact</a>
                 </li>
             </ul>
@@ -93,7 +118,7 @@
 			</div>
 		</div>
 
-		<div class="section">
+		<div class="section" id="section1">
 			<br><br><br>
 			<div ng-controller="ProjectsController as projects">
 				<div class="container">
@@ -127,7 +152,7 @@
 			</div>
 		</div>
 
-		<div class="section">
+		<div class="section" id="section2">
 			<div class="container">
 				<div class="row">
 					<!-- mail form -->
