@@ -45,7 +45,7 @@
 	$(document).ready(function() {
 	    $('#fullpage').fullpage({
 	    	anchors: ['top', 'projects', 'contact'],
-	    	sectionsColor: ['#D6EBE0', '#fff', '#313131'],
+	    	sectionsColor: ['', '#fff', '#313131'],
 	    	scrollOverflow: true
 	    });
 	});
@@ -72,7 +72,7 @@
     </div>
 
     <div id="fullpage">
-	    <div class="section">
+	    <div class="section" id="section0">
 		    <div ng-controller="PresentationController as presentation">
 				<div class="container">
 					<div class="row">

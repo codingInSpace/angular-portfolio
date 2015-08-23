@@ -49,6 +49,16 @@ body {
     color: #AECFE5;
 }
 
+/*sections*/
+#section0 {
+    background: url('../img/forest-large.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /*color: white;*/
+}
+#section0 img {
+    border: 8px solid rgb(25, 71, 117);
+}
+
 .contact-text {
     color: white;
 }
