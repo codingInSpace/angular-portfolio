@@ -1,31 +1,31 @@
 /*override bootcards default*/
 body {
     padding-top: 0;
-    background: #D6EBE0;
+    /*background: #D6EBE0;*/
 }
 
 /* MENU STYLE */
-.header .pure-menu {
+.header {
+    position:fixed;
+    top: 0;
+    display: block;
+    width: 100%;
+    z-index: 10;
     border-bottom-color: black;
     border-radius: 0;
 }
 
+.home-menu {
+    text-align: center;
+    background: #333;
+}
+
 .pure-menu-link {
     padding: 1em 1em;
-    /*text-decoration: none;*/
 }
 
 .pure-menu-item a {
     text-decoration: none;
-}
-
-.home-menu {
-    padding: 0.5em;
-    text-align: center;
-    /*box-shadow: 0 1px 1px rgba(0,0,0, 0.10);*/
-}
-.home-menu {
-    /*background: rgb(37, 147, 147);*/
 }
 
 .home-menu .pure-menu-heading {
@@ -48,15 +48,6 @@ body {
     border: none;
     color: #AECFE5;
 }
-
-.projects {
-    top: 100%;
-    width: 100%;
-    /*height: 100%;*/
-    position: absolute;
-    background-color: #F5FAF7;
-}
-
 
 /* TABLET AND UP */
 @media (min-width: 48em) {

@@ -17,8 +17,13 @@
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+	<!-- fullPage -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.9/jquery.fullPage.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.9/jquery.fullPage.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.9/vendors/jquery.slimscroll.min.js"></script>
+
 	<!-- WOW -->
-	<script src="js/wow.min.js"></script>
+	<!-- <script src="js/wow.min.js"></script> -->
 
 	<!-- Bootstrap and Bootcards-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -37,8 +42,20 @@
 </head>
 <body>
 	<script>
-	new WOW().init();
+	$(document).ready(function() {
+	    $('#fullpage').fullpage({
+	    	//Scrolling
+	    	scrollOverflow: true,
+
+	    	// Design
+	    	sectionsColor: ['#D6EBE0', '#fff']
+	    });
+	});
+
+	// new WOW().init();
+
 	</script>
+
 
 	<div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal">
@@ -56,57 +73,59 @@
         </div>
     </div>
 
-    <div ng-controller="PresentationController as presentation">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-5">
-					<h1>About me</h1>
-					<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham. </p>
+    <div id="fullpage">
+	    <div class="section">
+		    <div ng-controller="PresentationController as presentation">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5">
+							<h1>About me</h1>
+							<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham. </p>
 
-					<p>Meatloaf ham hock kielbasa tenderloin t-bone fatback landjaeger shankle sausage ball tip pancetta tri-tip hamburger venison. Beef ball tip sirloin tenderloin. Shank brisket jowl tail kevin leberkas shankle landjaeger kielbasa drumstick tongue.</p>
-				</div>
-				<div class="col-md-5 pull-right">
-					<img src="img/seriousman.jpg" class="hidden-xs img-circle" />
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="projects" ng-controller="ProjectsController as projects">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2 col-md-offset-5" style="text-align: center;">
-					<h1>My projects</h1>
-				</div>
-			</div>
-
-			<div class="row">
-
-				<!-- Project cards -->
-				<div ng-repeat="project in projects.myProjects">
-					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0">
-						<div class="wow fadeIn">
-							<div class="panel panel-default bootcards-media">
-							  <div class="panel-heading">
-							    <h3 class="panel-title">{{ project.title }}</h3>
-							  </div>
-							  <div class="panel-body">
-							  	{{ project.description }}
-							  </div>
-							  <img ng-src="{{ project.image }}" class="img-responsive"/>
-							  <div class="panel-body">
-							  	{{ project.teamDesc }}
-							  </div>
-
-							  <project-card-buttons item="project"></project-card-buttons>
-							</div>
+							<p>Meatloaf ham hock kielbasa tenderloin t-bone fatback landjaeger shankle sausage ball tip pancetta tri-tip hamburger venison. Beef ball tip sirloin tenderloin. Shank brisket jowl tail kevin leberkas shankle landjaeger kielbasa drumstick tongue.</p>
+						</div>
+						<div class="col-md-5 pull-right">
+							<img src="img/seriousman.jpg" class="hidden-xs img-circle" />
 						</div>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
+
+		<div class="section">
+			<br>
+			<div ng-controller="ProjectsController as projects">
+				<div class="container">
+					<div class="row">
+
+						<!-- Project cards -->
+						<div ng-repeat="project in projects.myProjects">
+							<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0">
+								<!-- <div class="wow fadeIn"> -->
+									<div class="panel panel-default bootcards-media">
+									  <div class="panel-heading">
+									    <h3 class="panel-title">{{ project.title }}</h3>
+									  </div>
+									  <div class="panel-body">
+									  	{{ project.description }}
+									  </div>
+									  <img ng-src="{{ project.image }}" class="img-responsive"/>
+									  <div class="panel-body">
+									  	{{ project.teamDesc }}
+									  </div>
+
+									  <project-card-buttons item="project"></project-card-buttons>
+									</div>
+								<!-- </div> -->
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 </body>
