@@ -44,7 +44,7 @@
 	<script>
 	$(document).ready(function() {
 	    $('#fullpage').fullpage({
-	    	anchors: ['', 'projects', 'contact'],
+	    	anchors: ['top', 'projects', 'contact'],
 	    	sectionsColor: ['#D6EBE0', '#fff', '#313131'],
 	    	scrollOverflow: true
 	    });
@@ -59,13 +59,13 @@
         <div class="home-menu pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
                 <li id="presentation-link" class="pure-menu-item pure-menu-selected">
-                	<a href="#/" class="pure-menu-link">About</a>
+                	<a href="#top" class="pure-menu-link">About</a>
                 </li>
                 <li id="projects-link" class="pure-menu-item">
-                	<a href="#/projects" class="pure-menu-link">My Projects</a>
+                	<a href="#projects" class="pure-menu-link">My Projects</a>
                 </li>
                 <li id="projects-link" class="pure-menu-item">
-                	<a href="#/projects" class="pure-menu-link">Contact</a>
+                	<a href="#contact" class="pure-menu-link">Contact</a>
                 </li>
             </ul>
         </div>
