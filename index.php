@@ -43,6 +43,16 @@
 <body>
 	<script>
 	$(document).ready(function() {
+
+		// Hack to apply slimscroll options
+		var oldSlimScroll = $.fn.slimScroll;
+		$.fn.slimScroll = function( options ){
+			options.touchScrollStep = 50;
+			options.size = '5px';
+			return oldSlimScroll.apply(this, [options] );
+		};
+
+		// Initialize fullpage
 	    $('#fullpage').fullpage({
 	    	anchors: ['top', 'projects', 'contact'],
 	    	menu: '.pure-menu-list',
@@ -52,13 +62,7 @@
 			navigationPosition: 'right'
 	    });
 
-	    $('#slimscroll').slimScroll({
-	    	touchScrollStep: 20
-	    });
 	});
-
-	// new WOW().init();
-
 	</script>
 
 
