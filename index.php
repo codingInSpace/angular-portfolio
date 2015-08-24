@@ -47,7 +47,7 @@
 		// Hack to apply slimscroll options
 		var oldSlimScroll = $.fn.slimScroll;
 		$.fn.slimScroll = function( options ){
-			options.touchScrollStep = 50;
+			options.touchScrollStep = 75;
 			options.size = '5px';
 			return oldSlimScroll.apply(this, [options] );
 		};
