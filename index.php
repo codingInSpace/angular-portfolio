@@ -53,7 +53,7 @@
 	    });
 
 	    $('#slimscroll').slimScroll({
-	    	touchScrollStep: 50
+	    	touchScrollStep: 20
 	    });
 	});
 
