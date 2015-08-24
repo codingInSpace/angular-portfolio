@@ -51,6 +51,10 @@
 	    	navigation: true,
 			navigationPosition: 'right'
 	    });
+
+	    $('#slimscroll').slimScroll({
+	    	touchScrollStep: 50
+	    });
 	});
 
 	// new WOW().init();
