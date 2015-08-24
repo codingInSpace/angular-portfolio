@@ -45,36 +45,11 @@
 	$(document).ready(function() {
 	    $('#fullpage').fullpage({
 	    	anchors: ['top', 'projects', 'contact'],
+	    	menu: '.pure-menu-list',
 	    	sectionsColor: ['', '#fff', '#313131'],
 	    	scrollOverflow: true,
 	    	navigation: true,
-			navigationPosition: 'right',
-			navigationTooltips: ['Top', 'Projects', 'Contact'],
-			onLeave: function(index, nextIndex, direction) {
-				switch (index) {
-					case 1:
-						$("#presentation-link").removeClass("pure-menu-selected");
-						break;
-					case 2:
-						$("#projects-link").removeClass("pure-menu-selected");
-						break;
-					case 3:
-						$("#contacts-link").removeClass("pure-menu-selected");
-						break;
-				}
-
-				switch (nextIndex) {
-					case 1:
-						$("#presentation-link").addClass("pure-menu-selected");
-						break;
-					case 2:
-						$("#projects-link").addClass("pure-menu-selected");
-						break;
-					case 3:
-						$("#contacts-link").addClass("pure-menu-selected");
-						break;
-				}
-			}
+			navigationPosition: 'right'
 	    });
 	});
 
@@ -86,13 +61,13 @@
 	<div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
-                <li id="presentation-link" class="pure-menu-item pure-menu-selected">
+                <li data-menuanchor="top" id="presentation-link" class="pure-menu-item active">
                 	<a href="#top" class="pure-menu-link">About</a>
                 </li>
-                <li id="projects-link" class="pure-menu-item">
+                <li data-menuanchor="projects" id="projects-link" class="pure-menu-item">
                 	<a href="#projects" class="pure-menu-link">My Projects</a>
                 </li>
-                <li id="contacts-link" class="pure-menu-item">
+                <li data-menuanchor="contact" id="contacts-link" class="pure-menu-item">
                 	<a href="#contact" class="pure-menu-link">Contact</a>
                 </li>
             </ul>
@@ -100,7 +75,7 @@
     </div>
 
     <div id="fullpage">
-	    <div class="section" id="section0">
+	    <div class="section active" id="section0">
 		    <div ng-controller="PresentationController as presentation">
 				<div class="container">
 					<div class="row">

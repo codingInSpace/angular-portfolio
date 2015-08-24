@@ -20,11 +20,8 @@ body {
     background: #333;
 }
 
-.pure-menu-link {
-    padding: 1em 1em;
-}
-
 .pure-menu-item a {
+    padding: 1em 1em;
     text-decoration: none;
 }
 
@@ -32,21 +29,23 @@ body {
     color: white;
     font-weight: 400;
     font-size: 120%;
-    /*text-align: left;*/
-}
-
-.home-menu .pure-menu-selected a {
-    color: white;
 }
 
 .home-menu a {
-    color: #6FBEF3;
+    color: rgb(238, 227, 202);
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
-    color: #AECFE5;
+}
+
+.active a {
+    color: white;
+}
+
+.pure-menu-selected a {
+    color: white !important;
 }
 
 /*sections*/
