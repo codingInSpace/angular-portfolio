@@ -20,11 +20,6 @@ body {
     background: #333;
 }
 
-.pure-menu-item a {
-    padding: 1em 1em;
-    text-decoration: none;
-}
-
 .home-menu .pure-menu-heading {
     color: white;
     font-weight: 400;
@@ -32,7 +27,10 @@ body {
 }
 
 .home-menu a {
+    padding: 0.8em 0.8em;
+    text-decoration: none;
     color: rgb(238, 227, 202);
+    line-height: 1.5;
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
@@ -42,10 +40,9 @@ body {
 
 .active a {
     color: white;
-}
-
-.pure-menu-selected a {
-    color: white !important;
+    background: url("../img/underline.png") repeat-x 100% 77.5% !important;
+    background-size: 100% 3px !important;
+    white-space: nowrap !important;
 }
 
 /*sections*/
