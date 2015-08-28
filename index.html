@@ -59,7 +59,20 @@
 	    	sectionsColor: ['', '#fff', '#313131'],
 	    	scrollOverflow: true,
 	    	navigation: true,
-			navigationPosition: 'right'
+			navigationPosition: 'right',
+			onLeave: function(index, nextIndex, direction){
+				switch(nextIndex) {
+					case 1:
+						$("#fp-nav").find("span").css("background", "white");
+						break;
+					case 2:
+						$("#fp-nav").find("span").css("background", "#333");
+						break;
+					case 3:
+						$("#fp-nav").find("span").css("background", "white");
+						break;
+				}
+			}
 	    });
 
 	});
