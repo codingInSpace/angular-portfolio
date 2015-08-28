@@ -31,7 +31,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/js/bootcards.min.js"></script>
 	
-	<!-- CSS imports -->
+	<!-- Other CSS imports -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -92,6 +92,14 @@
 			}
 	    });
 
+		// Click handlers for contact icons
+		$(".contact-links").find("#github").click(function() {
+			window.open('https://github.com/codingInSpace', '_blank');
+		});
+		$(".contact-links").find("#linkedin").click(function() {
+			window.open('https://linkedin.com/pub/jonathan-grangien/104/859/630', '_blank');
+		});
+
 	});
 	</script>
 
@@ -118,7 +126,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-5">
-							<h1>About me</h1>
+							<!-- <h1>About me</h1> -->
 							<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham. </p>
 
 							<p>Meatloaf ham hock kielbasa tenderloin t-bone fatback landjaeger shankle sausage ball tip pancetta tri-tip hamburger venison. Beef ball tip sirloin tenderloin. Shank brisket jowl tail kevin leberkas shankle landjaeger kielbasa drumstick tongue.</p>
@@ -189,9 +197,10 @@
 
 					<!-- links -->
 					<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-2">
-						<div class="contact-text">
+						<div class="contact-links contact-text">
 							<h2>Follow Me</h2>
-							<p>link link link</p>
+							<i id="github" class="fa fa-fw fa-3x fa-github-square"></i>
+							<i id="linkedin" class="fa fa-fw fa-3x fa-linkedin-square"></i>
 						</div>
 					</div>
 				</div>
