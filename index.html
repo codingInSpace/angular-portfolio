@@ -60,8 +60,25 @@
 	    	scrollOverflow: true,
 	    	navigation: true,
 			navigationPosition: 'right',
+
+			// Change nav dot color before next page load
 			onLeave: function(index, nextIndex, direction){
 				switch(nextIndex) {
+					case 1:
+						$("#fp-nav").find("span").css("background", "white");
+						break;
+					case 2:
+						$("#fp-nav").find("span").css("background", "#333");
+						break;
+					case 3:
+						$("#fp-nav").find("span").css("background", "white");
+						break;
+				}
+			},
+
+			// Change nav dot color after page load, includes first page
+			afterLoad: function(anchorLink, index){
+				switch(index) {
 					case 1:
 						$("#fp-nav").find("span").css("background", "white");
 						break;
