@@ -22,7 +22,7 @@ body {
 
 .home-menu .pure-menu-heading {
     color: white;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 120%;
 }
 
@@ -30,7 +30,7 @@ body {
     padding: 0.8em 0.8em;
     text-decoration: none;
     color: rgb(238, 227, 202);
-    line-height: 1.5;
+    line-height: 1.0;
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
@@ -55,8 +55,40 @@ body {
     border: 8px solid rgb(25, 71, 117);
 }
 
-.contact-text {
+.mail-form h2 {
+    color: rgb(238, 227, 202);
+}
+.mail-form p,
+.mail-form label {
     color: white;
+}
+
+.mail-form .mail-field,
+.mail-form textarea {
+    border-radius: 4px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.mail-form .mail-field {
+    width: 20em;
+}
+.mail-form textarea {
+    width: 20em;
+    max-width: 20em;
+    min-height: 5em;
+    max-height: 20em;
+}
+
+.contact-links h2 {
+    color: rgb(238, 227, 202);
+}
+.contact-links i {
+    color: white;
+    cursor: pointer;
+}
+.contact-links i:hover {
+    color: rgb(238, 227, 202);
 }
 
 /* TABLET AND UP */
