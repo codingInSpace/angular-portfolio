@@ -39,7 +39,7 @@ body {
 }
 
 .active a {
-    color: white;
+    color: rgb(218, 248, 254);
     background: url("../img/underline.png") repeat-x 100% 100% !important;
     background-size: 100% 3px !important;
     white-space: nowrap !important;
@@ -88,7 +88,7 @@ body {
     cursor: pointer;
 }
 .contact-links i:hover {
-    color: rgb(238, 227, 202);
+    color: rgb(218, 248, 254);
 }
 
 /* TABLET AND UP */
