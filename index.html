@@ -44,7 +44,7 @@
 	<script>
 	$(document).ready(function() {
 
-		$('.grid').masonry({
+		var $grid = $('#grid-container').masonry({
 		  // options...
 		  itemSelector: '.grid-item',
 		  columnWidth: 200
@@ -69,6 +69,12 @@
             </ul>
         </div>
     </div> -->
+
+    <div id="grid-container">
+	  <div class="grid-item">...</div>
+	  <div class="grid-item">...</div>
+	  <div class="grid-item">...</div>
+	</div>
 
 </body>
 </html>
