@@ -22,8 +22,8 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.9/jquery.fullPage.min.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.9/vendors/jquery.slimscroll.min.js"></script>
 
-	<!-- WOW -->
-	<!-- <script src="js/wow.min.js"></script> -->
+	<!-- masonry -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 
 	<!-- Bootstrap and Bootcards-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -43,6 +43,12 @@
 <body>
 	<script>
 	$(document).ready(function() {
+
+		$('.grid').masonry({
+		  // options...
+		  itemSelector: '.grid-item',
+		  columnWidth: 200
+		});
 
 		// Hack to apply slimscroll options
 		var oldSlimScroll = $.fn.slimScroll;
