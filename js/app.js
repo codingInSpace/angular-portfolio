@@ -54,6 +54,26 @@ angular.module('portfolioApp', [])
 				tryLinkDesc: "Try it!",
 				sourceLink: "",
 				sourceLinkDesc: ""
+			},
+			{
+				title: "Legomania",
+				description: "Website with back-end focus of searching for lego sets.",
+				image: "img/legomania.png",
+				teamDesc: "Team of five",
+				tryLink: "",
+				tryLinkDesc: "",
+				sourceLink: "",
+				sourceLinkDesc: ""
+			},
+			{
+				title: "Trappans Personalportal",
+				description: "Staff portal for a local pub/club. I've worked on dynamic JavaScript- and some php-backend.",
+				image: "img/portalen.png",
+				teamDesc: "Team of four",
+				tryLink: "",
+				tryLinkDesc: "",
+				sourceLink: "",
+				sourceLinkDesc: ""
 			}
 
 		];
