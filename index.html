@@ -72,13 +72,13 @@
 		  hwaccel: false, 
 		  position: 'absolute' 
 		}
-		var target = document.getElementById('dim-screen')
+		var target = document.getElementById('loading-screen')
 		var spinner = new Spinner(spinnerOptions).spin(target);
 
 		$('#grid-container').imagesLoaded( function(){
 
 			spinner.stop();
-			$('#dim-screen').hide();
+			$('#loading-screen').hide();
 
 			$('#grid-container').masonry({
 			  // options...
@@ -109,8 +109,16 @@
         </div>
     </div> -->
 
-  <!-- initial dim on all for loading spinner -->
-	<div id="dim-screen"></div>
+  <!-- initial loading on all for loading spinner -->
+	<div id="loading-screen">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-3 text-center">
+					<p>Loading images... Pleaset wait.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- side thing -->
 	<div id="presentation-box" class="hidden-xs">
