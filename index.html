@@ -23,6 +23,9 @@
 	<!-- masonry -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 
+	<!-- sticky -->
+	<!-- <script src="https://cdn.jsdelivr.net/jquery.sticky/1.0.1/jquery.sticky.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/jquery.sticky-kit/1.1.2/jquery.sticky-kit.min.js"></script>
 	<!-- Bootstrap and Bootcards-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/css/bootcards-desktop.min.css"> -->
@@ -51,6 +54,8 @@
 		  isFitWidth: true
 		});
 
+		$('#presentation-box').stick_in_parent();
+
 	});
 	</script>
 
@@ -71,8 +76,17 @@
         </div>
     </div> -->
 
+	<!-- side thing -->
+	<div id="presentation-box" class="hidden-xs">
+    	<img src="img/jonathan.png" class="img-rounded">
+    	<h2>Jonathan Grangien</h2>
+    	<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham.
+    	</p>
+	</div>
+
     <div class="container">
 	    <div class="row">
+	    <div class="col-sm-10">
 		    <div id="grid-container">
 			    <!-- test item -->
 				<div class="grid-item">
@@ -111,6 +125,7 @@
 					</p>
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 

@@ -3,6 +3,27 @@ body {
     background: #F0F0F0;
 }
 
+#presentation-box {
+    display: block;
+    background: rgb(30, 30, 30);
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    margin-right: 10px;
+    padding: 10px;
+    max-width: 200px;
+
+}
+
+#presentation-box img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .grid-item {
     background: #fff;
     border: 1px solid #AAA;
