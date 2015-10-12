@@ -44,6 +44,16 @@ angular.module('portfolioApp', [])
 				tryLinkDesc: "Try it!",
 				sourceLink: "",
 				sourceLinkDesc: ""
+			},
+			{
+				title: "Reverbify",
+				description: "An app built as part of a sound physics course. The user can upload or record a sound and combine it with a chosen environment's echo effect. ",
+				image: "img/reverbify1.png",
+				teamDesc: "Team of three",
+				tryLink: "https://reverbify.meteor.com",
+				tryLinkDesc: "Try it!",
+				sourceLink: "",
+				sourceLinkDesc: ""
 			}
 
 		];
