@@ -44,6 +44,36 @@ angular.module('portfolioApp', [])
 				tryLinkDesc: "Try it!",
 				sourceLink: "",
 				sourceLinkDesc: ""
+			},
+			{
+				title: "Reverbify",
+				description: "An app built as part of a sound physics course. The user can upload or record a sound and combine it with a chosen environment's echo effect. ",
+				image: "img/reverbify1.png",
+				teamDesc: "Team of three",
+				tryLink: "https://reverbify.meteor.com",
+				tryLinkDesc: "Try it!",
+				sourceLink: "",
+				sourceLinkDesc: ""
+			},
+			{
+				title: "Legomania",
+				description: "Website with back-end focus of searching for lego sets.",
+				image: "img/legomania.png",
+				teamDesc: "Team of five",
+				tryLink: "",
+				tryLinkDesc: "",
+				sourceLink: "",
+				sourceLinkDesc: ""
+			},
+			{
+				title: "Trappans Personalportal",
+				description: "Staff portal for a local pub/club. I've worked on dynamic JavaScript- and some php-backend.",
+				image: "img/portalen.png",
+				teamDesc: "Team of four",
+				tryLink: "",
+				tryLinkDesc: "",
+				sourceLink: "",
+				sourceLinkDesc: ""
 			}
 
 		];
