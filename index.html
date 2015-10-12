@@ -27,11 +27,13 @@
 	<!-- sticky -->
 	<!-- <script src="https://cdn.jsdelivr.net/jquery.sticky/1.0.1/jquery.sticky.min.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/jquery.sticky-kit/1.1.2/jquery.sticky-kit.min.js"></script>
-	<!-- Bootstrap and Bootcards-->
+	
+	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/css/bootcards-desktop.min.css"> -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/js/bootcards.min.js"></script> -->
+
+	<!-- spin js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
 	
 	<!-- Other CSS imports -->
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css"> -->
@@ -48,7 +50,36 @@
 	<script>
 	$(document).ready(function() {
 
+		var spinnerOptions = {
+		  lines: 11, 
+		  length: 10, 
+		  width: 10, 
+		  radius: 35, 
+		  scale: 1.5, 
+		  corners: 0.4, 
+		  color: '#000', 
+		  opacity: 0.25, 
+		  rotate: 0, 
+		  direction: 1, 
+		  speed: 1.8, 
+		  trail: 81, 
+		  fps: 20, 
+		  zIndex: 2e9, 
+		  className: 'spinner', 
+		  top: '50%', 
+		  left: '50%', 
+		  shadow: true, 
+		  hwaccel: false, 
+		  position: 'absolute' 
+		}
+		var target = document.getElementById('dim-screen')
+		var spinner = new Spinner(spinnerOptions).spin(target);
+
 		$('#grid-container').imagesLoaded( function(){
+
+			spinner.stop();
+			$('#dim-screen').hide();
+
 			$('#grid-container').masonry({
 			  // options...
 			  itemSelector: '.grid-item',
@@ -77,6 +108,9 @@
             </ul>
         </div>
     </div> -->
+
+  <!-- initial dim on all for loading spinner -->
+	<div id="dim-screen"></div>
 
 	<!-- side thing -->
 	<div id="presentation-box" class="hidden-xs">
