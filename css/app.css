@@ -1,6 +1,7 @@
 body {
     padding-top: 10px;
-    background: #F0F0F0;
+    /*background: #F0F0F0;*/
+    background-image: url("../img/crossword.png");
 }
 
 #presentation-box {
