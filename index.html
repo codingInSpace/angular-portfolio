@@ -22,6 +22,7 @@
 
 	<!-- masonry -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
 
 	<!-- sticky -->
 	<!-- <script src="https://cdn.jsdelivr.net/jquery.sticky/1.0.1/jquery.sticky.min.js"></script> -->
@@ -47,11 +48,12 @@
 	<script>
 	$(document).ready(function() {
 
-		var $grid = $('#grid-container').masonry({
-		  // options...
-		  itemSelector: '.grid-item',
-		  columnWidth: 0,	//why.
-		  isFitWidth: true
+		$('.gallery-masonry').imagesLoaded( function(){
+			$('#grid-container').masonry({
+			  // options...
+			  itemSelector: '.grid-item',
+			  columnWidth: 0		//why and how.
+			});
 		});
 
 		$('#presentation-box').stick_in_parent();
