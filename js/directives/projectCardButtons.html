@@ -1,47 +1,17 @@
 <!-- Both try and source links -->
 <div ng-if="item.tryLink!=='' && item.sourceLink!=='' ">
-  <div class="panel-footer">
-    <div class="btn-group btn-group-justified">      
-        <div class="btn-group">
-          <a class="btn btn-default" ng-href="{{ item.tryLink }}" target="_blank">
-            <i class="fa fa-lg fa-external-link"></i>
-            {{ item.tryLinkDesc }}
-          </a>
-        </div>
-        <div class="btn-group">
-          <a class="btn btn-default" ng-href="{{ item.sourceLink }}" target="_blank">
-            <i class="fa fa-lg fa-github"></i>
-            {{ item.sourceLinkDesc }}
-          </a>
-        </div>
-    </div>
+  <div class="btn-group">
+    <a class="btn btn-warning" ng-href="{{ item.tryLink }}" target="_blank"><i class="fa fa-lg fa-external-link"></i>{{ item.tryLinkDesc }}</a>
+    <a class="btn btn-default" ng-href="{{ item.sourceLink }}" target="_blank"><i class="fa fa-lg fa-github"></i>{{ item.sourceLinkDesc }}</a>    
   </div>
 </div>
 
 <!-- Only try link -->
 <div ng-if="item.tryLink!=='' && item.sourceLink=='' ">
-  <div class="panel-footer">
-    <div class="btn-group btn-group-justified">     
-        <div class="btn-group">
-          <a class="btn btn-default" ng-href="{{ item.tryLink }}" target="_blank">
-            <i class="fa fa-lg fa-external-link"></i>
-            {{ item.tryLinkDesc }}
-          </a>
-        </div>     
-    </div>
-  </div>
+  <a class="btn btn-warning" ng-href="{{ item.tryLink }}" target="_blank"><i class="fa fa-lg fa-external-link"></i>{{ item.tryLinkDesc }}</a>
 </div>
 
 <!-- Only source link -->
 <div ng-if="item.tryLink=='' && item.sourceLink!=='' ">
-  <div class="panel-footer">
-    <div class="btn-group btn-group-justified">
-        <div class="btn-group">
-          <a class="btn btn-default" ng-href="{{ item.sourceLink }}" target="_blank">
-            <i class="fa fa-lg fa-github"></i>
-            {{ item.sourceLinkDesc }}
-          </a>
-        </div>
-    </div>
-  </div>
+  <a class="btn btn-default" ng-href="{{ item.sourceLink }}" target="_blank"><i class="fa fa-lg fa-github"></i>{{ item.sourceLinkDesc }}</a> 
 </div>
