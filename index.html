@@ -115,18 +115,20 @@
 
 	<!-- side thing -->
 	<div id="presentation-box">
+		<div ng-controller="PresentationController as prez">
     	<img src="img/jonathan.png" class="img-rounded">
-    	<h2>Jonathan Grangien</h2>
-    	<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham.
+    	<h2>{{ prez.title }}</h2>
+    	<p>{{ prez.presentationText }}
     	</p>
     	<div class="contact-links text-center">
-	    	<a href="https://github.com/codingInSpace" target="_blank">
-	    		<i id="github" class="fa fa-fw fa-3x fa-github-square"></i>
+	    	<a ng-href="{{ prez.github }}" target="_blank">
+	    		<i class="fa fa-fw fa-3x fa-github-square"></i>
 	    	</a>
-				<a href="https://www.linkedin.com/profile/view?id=AAIAABp3dUQB-1E0m93nZr0MAetxMgn_ROHTh90" target="_blank">
-					<i id="linkedin" class="fa fa-fw fa-3x fa-linkedin-square"></i>
+				<a ng-href="{{ prez.linkedin }}" target="_blank">
+					<i class="fa fa-fw fa-3x fa-linkedin-square"></i>
 				</a>
 			</div>
+		</div>
 	</div>
 
 	<!-- masonry tiles -->

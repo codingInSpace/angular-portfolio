@@ -1,13 +1,11 @@
 angular.module('portfolioApp', [])
 	.controller('PresentationController', function() {
-		this.text = "jonathan";
+		this.title ="Jonathan Grangien"
+		this.presentationText = "Msc. student of Computer Science in Media Technology at Linköpings University in Sweden. I like programming, mainly websites and applications, and am looking to improve and explore new stuff.";
+		this.github = "https://github.com/codingInSpace";
+		this.linkedin = "https://www.linkedin.com/profile/view?id=AAIAABp3dUQB-1E0m93nZr0MAetxMgn_ROHTh90";
 
-		// var toggleSelected = function() {
-		// 	$('#projects-link').removeClass("pure-menu-selected");
-		// 	$('#presentation-link').addClass("pure-menu-selected");
-		// }
-
-		// toggleSelected();
+		
 	})
 
 	.controller('ProjectsController', function() {
