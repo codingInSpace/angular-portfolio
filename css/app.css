@@ -85,6 +85,14 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+.contact-links i {
+    color: white;
+    cursor: pointer;
+}
+.contact-links i:hover {
+    color: rgb(71, 209, 255);
+}
+
 /* MENU STYLE */
 /*.header {
     position:fixed;
