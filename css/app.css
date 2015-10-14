@@ -1,5 +1,5 @@
 body {
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     /*background: #F0F0F0;*/
     background-image: url("../img/crossword.png");
 }
@@ -24,7 +24,7 @@ body {
     font-family: Calluna,Arial,sans-serif;
 }
 
-#presentation-box {
+#side-presentation {
     display: block;
     background: rgb(30, 30, 30);
     border: 1px solid #AAA;
@@ -38,10 +38,30 @@ body {
     max-width: 200px;
 }
 
-#presentation-box img{
+#side-presentation img{
     display: block;
     width: 100%;
     height: auto;
+}
+
+#top-presentation {
+    display: none;
+    background: rgb(30, 30, 30);
+    color: #fff;
+    position: relative;
+    top: 0;
+    margin-bottom: 5%;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#top-presentation h2 {
+    font-size: 24px;
+}
+
+#top-secondary {
+    display: none;
+    padding: 15px;
 }
 
 .grid-item {
@@ -73,12 +93,15 @@ body {
     margin: 5px 0px 10px;
     font-size: 24px;
     font-weight: 350;
+    color: rgb(146, 77, 8);
 }
 
 .grid-item h3 {
     margin: 5px 0px 10px;
     font-size: 16px;
     font-weight: 700;
+    color: rgb(146, 77, 8);
+    opacity: 0.7;
 }
 
 .grid-item p {
@@ -149,8 +172,12 @@ body {
 
 /*CUSTOM PRESENTATION BOX QUERY*/
 @media (max-width: 860px) {
-    #presentation-box {
+    #side-presentation {
         display: none;
+    }
+
+    #top-presentation {
+        display: block;
     }
 }
 
@@ -179,4 +206,15 @@ body {
         font-size: 10px;
     }
 
+}
+
+/* BREAK POINT FOR TOP PRESENTATION VIEWS */
+@media (max-width: 480px) {
+    #top-primary {
+        display: none;
+    }
+
+    #top-secondary {
+        display: block;
+    }
 }
