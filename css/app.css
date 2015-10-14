@@ -150,7 +150,7 @@ body {
 }
 
 /* TABLET */
-@media (min-width: 480px) and (max-width: 1224px) {
+@media (min-width: 550px) and (max-width: 1224px) {
     .grid-item p {
         font-size: 1.5rem;
         line-height: 1.6;
@@ -162,8 +162,23 @@ body {
 }
 
 /* PHONE */
-@media (max-width: 480px) {
+@media (max-width: 550px) {
     #loading-screen p {
         font-size: 16px;
     }
+
+    .grid-item {
+        padding: 5px;
+        margin: 5px;
+        width:  175px;
+        font-size: 10px;   
+    }
+
+    .grid-item p {
+    }
+
+    .grid-item a {
+        font-size: 10px;
+    }
+
 }
