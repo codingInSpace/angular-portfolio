@@ -30,8 +30,8 @@ angular.module('portfolioApp', [])
 				teamDesc: "Team of three",
 				tryLink: "https://reverbify.meteor.com",
 				tryLinkDesc: "Try it!",
-				sourceLink: "",
-				sourceLinkDesc: ""
+				sourceLink: "https://github.com/codingInSpace/reverbify",
+				sourceLinkDesc: "Source"
 			},
 			{
 				title: "Trappans Personalportal",
@@ -70,8 +70,8 @@ angular.module('portfolioApp', [])
 				teamDesc: "Team of five",
 				tryLink: "",
 				tryLinkDesc: "",
-				sourceLink: "",
-				sourceLinkDesc: ""
+				sourceLink: "https://github.com/Hedlundaren/Legomania",
+				sourceLinkDesc: "Source"
 			}
 
 		];
