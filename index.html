@@ -67,8 +67,8 @@
 		var target = document.getElementById('loading-screen')
 		var spinner = new Spinner(spinnerOptions).spin(target);
 
-		$('#grid-container').imagesLoaded( function(){
-
+		$('#grid-container').imagesLoaded()
+		.always( function(){
 			spinner.stop();
 			$('#loading-screen').fadeOut("fast");
 			$('#grid-container').fadeIn("fast");
@@ -78,7 +78,10 @@
 			  itemSelector: '.grid-item',
 			  columnWidth: 0		//why and how.
 			});
-		});
+		})
+		.progress( function( instance, image ) {
+
+  	});
 
 		$('#side-presentation').stick_in_parent();
 
