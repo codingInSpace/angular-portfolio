@@ -94,4 +94,15 @@ angular.module('portfolioApp', [])
 			},
 			templateUrl: "js/directives/projectCardButtons.html"
 		}
+	})
+
+	.directive('contactLinks', function() {
+		return {
+			restrict: "E",
+			replace: false,
+			scope: {
+				item: "="
+			},
+			templateUrl: "js/directives/contactLinks.html"
+		}
 	});
