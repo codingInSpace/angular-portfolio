@@ -55,6 +55,11 @@ body {
     overflow: hidden;
     width:  250px;
     font-family: Calluna,Arial,sans-serif;  /*need a better one*/
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 .grid-item img {
