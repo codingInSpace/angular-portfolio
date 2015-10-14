@@ -49,6 +49,8 @@ body {
     background: rgb(30, 30, 30);
     color: #fff;
     position: relative;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     top: 0;
     margin-bottom: 5%;
     padding-bottom: 10px;
