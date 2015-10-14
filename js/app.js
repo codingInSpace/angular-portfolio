@@ -75,14 +75,6 @@ angular.module('portfolioApp', [])
 			}
 
 		];
-
-
-		// var toggleSelected = function() {
-		// 	$('#presentation-link').removeClass("pure-menu-selected");
-		// 	$('#projects-link').addClass("pure-menu-selected");
-		// }
-
-		// toggleSelected();
 	})
 	
 	.directive('projectCardButtons', function() {
