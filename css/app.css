@@ -203,7 +203,7 @@ body {
     }
 
     .grid-item a {
-        font-size: 10px;
+        width: 50%;
     }
 
 }
@@ -216,5 +216,9 @@ body {
 
     #top-secondary {
         display: block;
+    }
+
+    .grid-item a {
+        font-size: 8px;
     }
 }
