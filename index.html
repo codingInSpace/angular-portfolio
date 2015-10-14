@@ -71,7 +71,8 @@
 		$('#grid-container').imagesLoaded( function(){
 
 			spinner.stop();
-			$('#loading-screen').hide();
+			$('#loading-screen').fadeOut("fast");
+			$('#grid-container').fadeIn("fast");
 
 			$('#grid-container').masonry({
 			  // options...
@@ -103,15 +104,7 @@
     </div> -->
 
   <!-- initial loading on all for loading spinner -->
-	<div id="loading-screen">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-6 col-xs-offset-3 text-center">
-					<p>Loading images... Hold on...</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div id="loading-screen"></div>
 
 	<!-- side presentation - invisible in phone view-->
 	<div id="side-presentation">
