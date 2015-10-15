@@ -13,12 +13,23 @@ body {
     background-color: rgba(50, 50, 50, 0.3);
 }
 
-#loading-screen p {
-    background-color: rgba(0, 0, 0, 0.6);
+#progress-bar {
+    position: absolute;
+    display: block;
+    top: calc(50% + 110px);
+    left: calc(50% - 100px);
+    height: 30px;
+    width: 200px;
+    background: transparent;
+    border: 3px solid rgb(0, 153, 255);
     border-radius: 20px;
-    color: white;
-    font-size: 36px;
-    font-family: Calluna,Arial,sans-serif;
+}
+
+#progress-bar > #progress {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    background: rgba(71, 209, 255, 0.6);
 }
 
 #side-presentation {

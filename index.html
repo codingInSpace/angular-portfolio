@@ -67,20 +67,31 @@
 		var target = document.getElementById('loading-screen')
 		var spinner = new Spinner(spinnerOptions).spin(target);
 
+		var countImages = $('#grid-container img').size();
+
 		$('#grid-container').imagesLoaded()
 		.always( function(){
+
+			// when all images loaded or failed
 			spinner.stop();
 			$('#loading-screen').fadeOut("fast");
 			$('#grid-container').fadeIn("fast");
 
+			// initialize masonry
 			$('#grid-container').masonry({
-			  // options...
 			  itemSelector: '.grid-item',
 			  columnWidth: 0		//why and how.
 			});
 		})
 		.progress( function( instance, image ) {
+			if(image.isLoaded) {
 
+				// update progress bar
+				$(image.img).addClass('loaded');
+				var countLoadedImages = $('#grid-container img.loaded').size();
+				var width = 100 * (countLoadedImages / countImages) + '%';
+				$('#progress-bar > #progress').css({ 'width' : width });	
+			}
   	});
 
 		$('#side-presentation').stick_in_parent();
@@ -89,7 +100,12 @@
 	</script>
 
   <!-- initial loading screen with loading spinner -->
-	<div id="loading-screen"></div>
+	<div id="loading-screen">
+		<div id="progress-bar">
+			<div id="progress"></div>
+		</div>
+	</div>
+
 
 	<!-- side presentation - invisible in phone view-->
 	<div id="side-presentation">
