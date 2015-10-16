@@ -137,9 +137,15 @@
 
 			    <!-- for devices smaller still -->
 			    <div id="top-secondary">
-			    	<h2>{{ prez.title }}</h2>
-			    	<p>{{ prez.presentationText }}</p>
-						<contact-links item="prez"></contact-links>
+			    	<div class="col-xs-12">
+			    		<h2>{{ prez.title }}</h2>
+			    	</div>
+			    	<div class="col-xs-10">
+				    	<p>{{ prez.presentationText }}</p>
+				    </div>
+				    <div class="col-xs-2">
+							<contact-links item="prez"></contact-links>
+			    	</div>
 			    </div>
 		    </div>
 	    </div>
