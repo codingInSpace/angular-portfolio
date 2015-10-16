@@ -21,14 +21,14 @@
 
 	<!-- sticky-kit -->
 	<script src="https://cdn.jsdelivr.net/jquery.sticky-kit/1.1.2/jquery.sticky-kit.min.js"></script>
-	
+
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<!-- spin js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
-	
+
 	<!-- Other CSS imports -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
@@ -43,26 +43,26 @@
 	$(document).ready(function() {
 
 		var spinnerOptions = {
-		  lines: 11, 
-		  length: 10, 
-		  width: 10, 
-		  radius: 35, 
-		  scale: 1.5, 
-		  corners: 0.4, 
-		  color: '#000', 
-		  opacity: 0.25, 
-		  rotate: 0, 
-		  direction: 1, 
-		  speed: 1.8, 
-		  trail: 81, 
-		  fps: 20, 
-		  zIndex: 2e9, 
-		  className: 'spinner', 
-		  top: '50%', 
-		  left: '50%', 
-		  shadow: true, 
-		  hwaccel: false, 
-		  position: 'absolute' 
+		  lines: 11,
+		  length: 10,
+		  width: 10,
+		  radius: 35,
+		  scale: 1.5,
+		  corners: 0.4,
+		  color: '#000',
+		  opacity: 0.25,
+		  rotate: 0,
+		  direction: 1,
+		  speed: 1.8,
+		  trail: 81,
+		  fps: 20,
+		  zIndex: 2e9,
+		  className: 'spinner',
+		  top: '50%',
+		  left: '50%',
+		  shadow: true,
+		  hwaccel: false,
+		  position: 'absolute'
 		}
 		var target = document.getElementById('loading-screen')
 		var spinner = new Spinner(spinnerOptions).spin(target);
@@ -90,7 +90,7 @@
 				$(image.img).addClass('loaded');
 				var countLoadedImages = $('#grid-container img.loaded').size();
 				var width = 100 * (countLoadedImages / countImages) + '%';
-				$('#progress-bar > #progress').css({ 'width' : width });	
+				$('#progress-bar > #progress').css({ 'width' : width });
 			}
   	});
 
@@ -162,11 +162,13 @@
 					<div ng-controller="ProjectsController as projects">
 				    <div ng-repeat="project in projects.myProjects">
 							<div class="grid-item">
-				  			<img ng-src="{{ project.image }}" class="img-rounded">
-					  		<h2>{{ project.title }}</h2>
-					  		<h3>{{ project.teamDesc }}</h3>
-					  		<p>{{ project.description }}</p>
-					  		<project-card-buttons item="project"></project-card-buttons>
+				  			<img ng-src="{{ project.image }}">
+								<div class="card-inner">
+									<h2>{{ project.title }}</h2>
+						  		<h3>{{ project.teamDesc }}</h3>
+						  		<p>{{ project.description }}</p>
+						  		<project-card-buttons item="project"></project-card-buttons>
+								</div>
 						 	</div>
 						</div>
 					</div>
