@@ -1,17 +1,17 @@
 angular.module('portfolioApp', [])
 	.controller('PresentationController', function() {
 		this.title ="Jonathan Grangien"
-		this.presentationText = "Msc. student of Computer Science in Media Technology at Linköpings University in Sweden. I like programming, mainly websites and applications, and am looking to improve and explore new stuff.";
+		this.presentationText = "MSc. student of Computer Science in Media Technology at Linköpings University in Sweden. I like programming, mainly websites, applications and graphics, and am looking to improve and explore as an engineer.";
 		this.github = "https://github.com/codingInSpace";
 		this.linkedin = "https://www.linkedin.com/profile/view?id=AAIAABp3dUQB-1E0m93nZr0MAetxMgn_ROHTh90";
 
-		
+
 	})
 
 	.controller('ProjectsController', function() {
 		this.text = "Such projects much show";
 
-		this.myProjects = 
+		this.myProjects =
 		[
 			{
 				title: "Galaxy Goose",
@@ -76,7 +76,7 @@ angular.module('portfolioApp', [])
 
 		];
 	})
-	
+
 	.directive('projectCardButtons', function() {
 		return {
 			restrict: "E",
