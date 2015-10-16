@@ -162,6 +162,9 @@ body {
 
 /* tablet */
 @media (min-width: 585px) and (max-width: 1224px) {
+    .grid-item {
+        width:  200px;
+    }
     .grid-item p {
         font-size: 1.5rem;
         line-height: 1.6;
