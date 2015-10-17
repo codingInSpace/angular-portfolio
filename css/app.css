@@ -33,17 +33,18 @@ body {
 }
 
 #side-presentation {
+    position: absolute;
     display: block;
+    top: 25px;
+    right: 0px;
     background: rgb(30, 30, 30);
     border: 1px solid #AAA;
     border-radius: 5px;
     color: #fff;
-    position: absolute;
-    top: 25px;
-    right: 0;
-    margin-right: 10px;
+    margin-right: 5px;
     padding: 10px;
     max-width: 200px;
+    min-height: 520px;
 }
 
 #side-presentation img{
@@ -147,18 +148,14 @@ body {
         font-size: 2rem;
         line-height: 1.6;
     }
-}
 
-/* custom presentation box query */
-@media (max-width: 860px) {
-    #side-presentation {
-        display: none;
-    }
-
-    #top-presentation {
-        display: block;
+    /*override bootstrap, better view for masonry tiles*/
+    #main-container {
+      width: 85%;
+      max-width: 1400px;
     }
 }
+
 
 /* tablet */
 @media (min-width: 585px) and (max-width: 1224px) {
@@ -171,12 +168,8 @@ body {
     }
 }
 
-/* phone */
-@media (max-width: 585px) {
-    #loading-screen p {
-        font-size: 16px;
-    }
-
+/* auto scaling two column cards break point */
+@media (max-width: 730px) {
     .grid-item {
         margin: 1%;
         width:  47%;
@@ -189,8 +182,8 @@ body {
 
 }
 
-/* break top for top presentation views */
-@media (max-width: 480px) {
+/* break for top presentation views */
+@media (max-width: 650px) {
     #top-primary {
         display: none;
     }
