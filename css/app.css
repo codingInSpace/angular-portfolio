@@ -1,5 +1,6 @@
 body {
-    background-image: url("../img/crossword.png");
+    /* Background pattern from subtlepatterns.com */
+    background: #ffffff url("../img/brushed.png");
 }
 
 #loading-screen {
@@ -93,7 +94,7 @@ body {
 
 .grid-item {
     background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    /*border: 1px solid rgba(0, 0, 0, 0.1);*/
     border-bottom: 2px solid #CCC;
     border-radius: 8px;
     margin: 10px;
