@@ -110,6 +110,7 @@ body {
 
 .grid-item .card-inner {
   padding: 10px;
+  text-align: center;
 }
 
 .grid-item h2 {
@@ -130,7 +131,6 @@ body {
 .grid-item p {
     font-family: inherit;
     font-weight: normal;
-    margin-bottom: 1.25rem;
     text-rendering: optimizeLegibility;
 }
 
@@ -156,8 +156,6 @@ body {
     }
 }
 
-
-
 /* smaller desktop screens */
 @media (min-width: 1200px) and (max-width: 1640px) {
     .grid-item {
@@ -176,7 +174,6 @@ body {
     }
 }
 
-
 /* tablet */
 @media (min-width: 585px) and (max-width: 1224px) {
     .grid-item {
@@ -184,7 +181,6 @@ body {
     }
     .grid-item p {
         font-size: 1.5rem;
-        line-height: 1.6;
     }
 }
 
