@@ -91,7 +91,7 @@ body {
     border-radius: 8px;
     margin: 10px;
     overflow: hidden;
-    width:  250px;
+    width:  350px;  /*desktop*/
     font-family: Calluna,Arial,sans-serif;  /*need a better one*/
     word-break: break-word;
     -webkit-hyphens: auto;
@@ -142,8 +142,28 @@ body {
     color: rgb(71, 209, 255);
 }
 
-/* desktop, laptop, and up*/
-@media only screen and (min-width: 1224px) {
+/* big desktop screens and up */
+@media only screen and (min-width: 1640px) {
+    .grid-item p {
+        font-size: 2rem;
+        line-height: 1.6;
+    }
+
+    /*override bootstrap, better view for masonry tiles*/
+    #main-container {
+        width: 85%;
+        max-width: 1400px;
+    }
+}
+
+
+
+/* smaller desktop screens */
+@media (min-width: 1200px) and (max-width: 1640px) {
+    .grid-item {
+        width: 250px;
+    }
+
     .grid-item p {
         font-size: 2rem;
         line-height: 1.6;
@@ -160,7 +180,7 @@ body {
 /* tablet */
 @media (min-width: 585px) and (max-width: 1224px) {
     .grid-item {
-        width:  200px;
+        width:  250px;
     }
     .grid-item p {
         font-size: 1.5rem;
