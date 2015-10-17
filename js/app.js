@@ -15,7 +15,7 @@ angular.module('portfolioApp', [])
 		[
 			{
 				title: "Galaxy Goose",
-				description: "An experimental WebGL application where you can create and customize planets interactively. (WIP)",
+				description: "Interactive WebGL application",
 				image: "img/galaxygoose1.png",
 				teamDesc: "Team of five.",
 				tryLink: "https://codinginspace.github.io/myGalaxy",
@@ -25,7 +25,7 @@ angular.module('portfolioApp', [])
 			},
 			{
 				title: "Reverbify",
-				description: "An app built as part of a sound physics course. The user can upload or record a sound and combine it with a chosen environment's echo effect. ",
+				description: "Reverb simulation app",
 				image: "img/reverbify1.png",
 				teamDesc: "Team of three",
 				tryLink: "https://reverbify.meteor.com",
@@ -35,7 +35,7 @@ angular.module('portfolioApp', [])
 			},
 			{
 				title: "Trappans Personalportal",
-				description: "Staff portal for a local pub/club. I've worked on dynamic JavaScript- and some php-backend.",
+				description: "Club staff portal",
 				image: "img/portalen.png",
 				teamDesc: "Team of four",
 				tryLink: "",
@@ -45,7 +45,7 @@ angular.module('portfolioApp', [])
 			},
 			{
 				title: "Mapus",
-				description: "An Android app for students to use for quickly communicating where to meet to study, with the help of interactive maps. (WIP)",
+				description: "Study tool app",
 				image: "img/mapus1.png",
 				teamDesc: "Team of five.",
 				tryLink: "",
@@ -55,7 +55,7 @@ angular.module('portfolioApp', [])
 			},
 			{
 				title: "Get Busy",
-				description: "A mobile app for \"gamifying\" your motivation to achieve daily goals, built to try meteor.js. (WIP)",
+				description: "\"Gamifying\" motivation app",
 				image: "img/getbusy1.png",
 				teamDesc: "Personal project",
 				tryLink: "https://getbusy.meteor.com",
@@ -65,7 +65,7 @@ angular.module('portfolioApp', [])
 			},
 			{
 				title: "Legomania",
-				description: "Website with back-end focus of searching for lego sets.",
+				description: "Lego database website",
 				image: "img/legomania.png",
 				teamDesc: "Team of five",
 				tryLink: "",
