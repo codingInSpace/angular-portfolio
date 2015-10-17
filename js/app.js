@@ -1,7 +1,7 @@
 angular.module('portfolioApp', [])
 	.controller('PresentationController', function() {
 		this.title ="Jonathan Grangien"
-		this.presentationText = "MSc. student of Computer Science in Media Technology at Linköpings University in Sweden. I like programming, mainly websites, applications and graphics, and am looking to improve and explore as an engineer.";
+		this.presentationText = "MSc. student of Computer Science in Media Technology at Linköpings University in Sweden. I like programming, mainly websites, applications and graphics, and am looking to improve and explore as an engineer. Here are some projects I've worked on.";
 		this.github = "https://github.com/codingInSpace";
 		this.linkedin = "https://www.linkedin.com/profile/view?id=AAIAABp3dUQB-1E0m93nZr0MAetxMgn_ROHTh90";
 
