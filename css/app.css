@@ -94,7 +94,7 @@ body {
 
 .grid-item {
     background: #fff;
-    /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+    border: 1px solid rgba(100, 100, 100, 0.2);
     border-bottom: 2px solid #CCC;
     border-radius: 8px;
     margin: 10px;
@@ -125,7 +125,7 @@ body {
     margin: 5px 0px 10px;
     font-size: 24px;
     font-weight: 350;
-    color: rgb(146, 77, 8);
+    color: rgb(60, 20, 8);
 }
 
 .grid-item h3 {
