@@ -45,18 +45,18 @@
 
 		var spinnerOptions = {
 		  lines: 11,
-		  length: 10,
-		  width: 10,
-		  radius: 35,
-		  scale: 1.5,
-		  corners: 0.4,
+		  length: 8,
+		  width: 6,
+		  radius: 25,
+		  scale: 0.8,
+		  corners: 0.9,
 		  color: '#000',
 		  opacity: 0.25,
 		  rotate: 0,
 		  direction: 1,
-		  speed: 1.8,
+		  speed: 2.4,
 		  trail: 81,
-		  fps: 20,
+		  fps: 24,	//"cinematic experience"
 		  zIndex: 2e9,
 		  className: 'spinner',
 		  top: '50%',
@@ -74,9 +74,9 @@
 		.always( function(){
 
 			// when all images loaded or failed
-			spinner.stop();
 			$('#loading-screen').fadeOut("fast");
 			$('#grid-container').fadeIn("fast");
+			spinner.stop();
 
 			// initialize masonry
 			$('#grid-container').masonry({
