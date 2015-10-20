@@ -110,7 +110,7 @@
 	<!-- side presentation - invisible in phone view-->
 	<div id="side-presentation" class="hidden-xs">
 		<div ng-controller="PresentationController as prez">
-    	<img src="img/jonathan.png" class="img-rounded">
+    	<img src="img/jonathan.png" class="img-circle">
     	<h2>{{ prez.title }}</h2>
     	<p>{{ prez.presentationText }}
     	</p>
@@ -124,34 +124,15 @@
 	<!-- top presentation - visible in phone view-->
 	<div id="top-presentation" class="visible-xs">
 		<div ng-controller="PresentationController as prez">
-    	<div class="container">
-	    	<div class="row">
-	    		<div id="top-primary">
-			    	<div class="col-xs-6">
-				    	<img src="img/jonathan.png" class="img-rounded">
-				    </div>
-
-				    <div class="col-xs-6">
+	    	<div class="container">
+		    	<div class="row">
+				    <div class="col-xs-12">
 				    	<h2>{{ prez.title }}</h2>
 				    	<p>{{ prez.presentationText }}</p>
-							<contact-links item="prez"></contact-links>
+						<contact-links item="prez"></contact-links>
 				    </div>
-				   </div>
-
-			    <!-- for devices smaller still -->
-			    <div id="top-secondary">
-			    	<div class="col-xs-12">
-			    		<h2>{{ prez.title }}</h2>
-			    	</div>
-			    	<div class="col-xs-10">
-				    	<p>{{ prez.presentationText }}</p>
-				    </div>
-				    <div class="col-xs-2">
-							<contact-links item="prez"></contact-links>
-			    	</div>
-			    </div>
+			   </div>
 		    </div>
-	    </div>
 		</div>
 	</div>
 

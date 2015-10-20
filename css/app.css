@@ -38,20 +38,22 @@ body {
     display: block;
     top: 25px;
     right: 0px;
-    background: rgb(30, 30, 30);
-    border: 1px solid #AAA;
-    border-radius: 5px;
-    color: #fff;
     margin-right: 5px;
     padding: 10px;
     max-width: 200px;
     min-height: 520px;
+    color: #000;
+    font-size: 14px;
 }
 
 #side-presentation img{
     display: block;
     width: 100%;
     height: auto;
+}
+
+#side-presentation h2{
+    font-size: 20px;
 }
 
 .wip-text {
@@ -63,28 +65,23 @@ body {
 
 #top-presentation {
     display: none;
-    background: rgb(30, 30, 30);
-    color: #fff;
+    color: #000;
     position: relative;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
     top: 0;
     margin-bottom: 5%;
     padding: 2px;
     width: 100%;
 }
 
-
-#top-secondary {
-    display: none;
-    padding: 1%;
+#top-presentation img {
+    width: 100%;
 }
 
-#top-secondary h2 {
-    font-size: 16px;
+#top-presentation h2 {
+    font-size: 18px;
 }
 
-#top-secondary p {
+#top-presentation p {
     font-size: 12px;
 }
 
@@ -143,7 +140,7 @@ body {
 }
 
 .contact-links i {
-    color: white;
+    color: #000;
     cursor: pointer;
 }
 .contact-links i:hover {
@@ -183,7 +180,7 @@ body {
 }
 
 /* tablet */
-@media (min-width: 585px) and (max-width: 1224px) {
+@media (min-width: 730px) and (max-width: 1224px) {
     .grid-item {
         width:  250px;
     }
@@ -208,14 +205,6 @@ body {
 
 /* break for top presentation views */
 @media (max-width: 650px) {
-    #top-primary {
-        display: none;
-    }
-
-    #top-secondary {
-        display: block;
-    }
-
     .grid-item a {
         font-size: 8px;
     }
