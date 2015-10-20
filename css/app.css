@@ -103,6 +103,7 @@ body {
     overflow: hidden;
     width:  350px;  /*desktop*/
     font-family: Calluna,Arial,sans-serif;  /*need a better one*/
+
     word-break: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
@@ -115,6 +116,7 @@ body {
     width: 100%;
     height: auto;
     overflow: hidden;
+    opacity: 0.9;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -142,6 +144,14 @@ body {
     font-family: inherit;
     font-weight: normal;
     text-rendering: optimizeLegibility;
+}
+
+.grid-item:hover {
+    background: rgba(255, 163, 71, 0.6);
+    cursor: pointer;
+}
+.grid-item:hover img {
+    opacity: 1;
 }
 
 .contact-links i {
