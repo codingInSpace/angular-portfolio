@@ -43,17 +43,21 @@ body {
     max-width: 200px;
     min-height: 520px;
     color: #000;
+}
+
+#side-presentation h2{
+    font-size: 20px;
+}
+
+#side-presentation p {
     font-size: 14px;
+    margin-bottom: 30px;
 }
 
 #side-presentation img{
     display: block;
     width: 100%;
     height: auto;
-}
-
-#side-presentation h2{
-    font-size: 20px;
 }
 
 .wip-text {
