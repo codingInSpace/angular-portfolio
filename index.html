@@ -5,35 +5,38 @@
 	<title>Jonathan Grangien</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- angular libs -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
-
-	<!-- Modules -->
-	<script src="js/app.js"></script>
-
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-	<!-- masonry -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
-
-	<!-- sticky-kit -->
-	<script src="https://cdn.jsdelivr.net/jquery.sticky-kit/1.1.2/jquery.sticky-kit.min.js"></script>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+	<!-- angular libs -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+
+	<!-- Modules -->
+	<script src="app/app.js"></script>
+
+	<!-- masonry -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
+
+	<!-- angular modal service -->
+	<script src="assets/js/angular-modal-service.min.js"></script>
+
+	<!-- sticky-kit -->
+	<script src="https://cdn.jsdelivr.net/jquery.sticky-kit/1.1.2/jquery.sticky-kit.min.js"></script>
+
 	<!-- spin js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
 
 	<!-- Other CSS imports -->
-	<link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/font-awesome-4.4.0/css/font-awesome.min.css">
 
 	<!-- Custom css -->
-	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="assets/css/app.css">
 
 </head>
 <body>
@@ -110,7 +113,7 @@
 	<!-- side presentation - invisible in phone view-->
 	<div id="side-presentation" class="hidden-xs">
 		<div ng-controller="PresentationController as prez">
-	    	<img src="img/jonathan.png" class="img-circle">
+	    	<img src="assets/img/jonathan.png" class="img-circle">
 	    	<h2>{{ prez.title }}</h2>
 	    	<p>{{ prez.presentationText }}</p>
 			<div id="contact-info">
@@ -143,12 +146,15 @@
 		    <!-- projects loop -->
 				<div ng-controller="ProjectsController as projects">
 			    <div ng-repeat="project in projects.myProjects">
-						<div class="grid-item">
+
+						<!-- <div class="grid-item" ng-click="showProjectModal(project.title, project.descLong, project.teamDesc, project.tryLink, project.tryLinkDesc, project.sourceLink, project.sourceLinkDesc)"> -->
+						<div class="grid-item" ng-click="showProjectModal(project)">
+
 			  			<img ng-src="{{ project.image }}">
 							<div class="card-inner">
 							<h2>{{ project.title }}</h2>
 					  		<p>{{ project.description }}</p>
-					  		<project-card-buttons item="project"></project-card-buttons>
+					  		<!-- <project-card-buttons item="project"></project-card-buttons> -->
 							</div>
 					 	</div>
 					</div>
