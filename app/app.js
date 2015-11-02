@@ -10,15 +10,19 @@ angular.module('portfolioApp', ['angularModalService'])
 
 	.controller('ProjectsController', function($scope, ModalService) {
 
-		$scope.showProjectModal = function(title, descLong, teamDesc){
-
+		// $scope.showProjectModal = function(title, descLong, teamDesc, tryLink, tryLinkDesc, sourceLink, sourceLinkDesc){
+		$scope.showProjectModal = function(project){
 			ModalService.showModal({
 		    templateUrl: "app/templates/modaltemplate.html",
 		    controller: "ModalController",
 				inputs: {
-	        title: title,
-					descLong: descLong,
-					teamDesc: teamDesc
+	        title: project.title,
+					descLong: project.descLong,
+					teamDesc: project.teamDesc,
+					tryLink: project.tryLink,
+					tryLinkDesc: project.tryLinkDesc,
+					sourceLink: project.sourceLink,
+					sourceLinkDesc: project.sourceLinkDesc
 	      }
 		  }).then(function(modal) {
 
@@ -92,12 +96,18 @@ angular.module('portfolioApp', ['angularModalService'])
 	})
 
 	.controller('ModalController',  [
-	  '$scope', '$element', 'title', 'descLong', 'teamDesc', 'close',
-	  function($scope, $element, title, descLong, teamDesc, close) {
+	  '$scope', '$element', 'title', 'descLong', 'teamDesc', 'tryLink', 'tryLinkDesc', 'sourceLink', 'sourceLinkDesc', 'close',
+	  function($scope, $element, title, descLong, teamDesc, tryLink, tryLinkDesc, sourceLink, sourceLinkDesc, close) {
 
 			$scope.title = title;
 			$scope.descLong = descLong;
 			$scope.teamDesc = teamDesc;
+			$scope.tryLink = tryLink;
+			$scope.tryLinkDesc = tryLinkDesc;
+			$scope.sourceLink = sourceLink;
+			$scope.sourceLinkDesc = sourceLinkDesc;
+
+			// console.log("trylink: " + $scope.tryLink);
 
 			$scope.close = function() {
 		 	  close({}, 500); 	// close, but give 500ms for animation
@@ -113,11 +123,15 @@ angular.module('portfolioApp', ['angularModalService'])
 	}])
 
 	.directive('projectCardButtons', function() {
+		console.log("buttons!");
 		return {
 			restrict: "E",
 			replace: false,
 			scope: {
-				item: "="
+				tryLink: "=",
+				tryLinkDesc: "=",
+				sourceLink: "=",
+				sourceLinkDesc: "="
 			},
 			templateUrl: "app/directives/projectCardButtons.html"
 		}

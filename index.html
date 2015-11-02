@@ -143,7 +143,10 @@
 		    <!-- projects loop -->
 				<div ng-controller="ProjectsController as projects">
 			    <div ng-repeat="project in projects.myProjects">
-						<div class="grid-item" ng-click="showProjectModal(project.title, project.descLong, project.teamDesc)">
+
+						<!-- <div class="grid-item" ng-click="showProjectModal(project.title, project.descLong, project.teamDesc, project.tryLink, project.tryLinkDesc, project.sourceLink, project.sourceLinkDesc)"> -->
+						<div class="grid-item" ng-click="showProjectModal(project)">
+
 			  			<img ng-src="{{ project.image }}">
 							<div class="card-inner">
 							<h2>{{ project.title }}</h2>
