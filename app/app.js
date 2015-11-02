@@ -17,6 +17,7 @@ angular.module('portfolioApp', ['angularModalService'])
 		    controller: "ModalController",
 				inputs: {
 	        title: project.title,
+					image: project.image,
 					descLong: project.descLong,
 					teamDesc: project.teamDesc,
 					tryLink: project.tryLink,
@@ -96,10 +97,11 @@ angular.module('portfolioApp', ['angularModalService'])
 	})
 
 	.controller('ModalController',  [
-	  '$scope', '$element', 'title', 'descLong', 'teamDesc', 'tryLink', 'tryLinkDesc', 'sourceLink', 'sourceLinkDesc', 'close',
-	  function($scope, $element, title, descLong, teamDesc, tryLink, tryLinkDesc, sourceLink, sourceLinkDesc, close) {
+	  '$scope', '$element', 'title', 'image', 'descLong', 'teamDesc', 'tryLink', 'tryLinkDesc', 'sourceLink', 'sourceLinkDesc', 'close',
+	  function($scope, $element, title, image, descLong, teamDesc, tryLink, tryLinkDesc, sourceLink, sourceLinkDesc, close) {
 
 			$scope.title = title;
+			$scope.image = image;
 			$scope.descLong = descLong;
 			$scope.teamDesc = teamDesc;
 			$scope.tryLink = tryLink;
