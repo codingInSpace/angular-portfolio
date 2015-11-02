@@ -1,4 +1,4 @@
-angular.module('portfolioApp', [])
+angular.module('portfolioApp', ['angularModalService'])
 	.controller('PresentationController', function() {
 		this.title ="Jonathan Grangien"
 		this.presentationText = "MSc. student of Computer Science in Media Technology at Linköpings University, Sweden. I like programming, mainly websites, applications and graphics.";
