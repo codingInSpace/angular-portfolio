@@ -31,7 +31,7 @@ angular.module('portfolioApp', ['angularModalService'])
 		    //it's a bootstrap element, use 'modal' to show it
 		    modal.element.modal();
 		    modal.close.then(function(result) {
-		      console.log(result);
+		      // console.log(result);
 		    });
 		  });
 		}
@@ -126,7 +126,6 @@ angular.module('portfolioApp', ['angularModalService'])
 	}])
 
 	.directive('projectCardButtons', function() {
-		console.log("buttons!");
 		return {
 			restrict: "E",
 			replace: false,
