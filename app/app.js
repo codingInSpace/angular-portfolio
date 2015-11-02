@@ -9,7 +9,6 @@ angular.module('portfolioApp', ['angularModalService'])
 	})
 
 	.controller('ProjectsController', function($scope, ModalService) {
-		// this.text = "Such projects much show";
 
 		$scope.showProjectModal = function(title, descLong, teamDesc){
 
@@ -36,7 +35,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Galaxy Goose",
 				descShort: "Interactive WebGL application",
-				descLong: "bla bla bla",
+				descLong: "An experimental WebGL application where you can create and customize planets interactively.",
 				image: "assets/img/galaxygoose1.png",
 				teamDesc: "Team of five.",
 				tryLink: "https://codinginspace.github.io/myGalaxy",
@@ -47,7 +46,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Reverbify",
 				descShort: "Reverb simulation app",
-				descLong: "",
+				descLong: "An app built as part of a sound physics course. The user can upload or record a sound and combine it with a chosen environment's echo effect.",
 				image: "assets/img/reverbify1.png",
 				teamDesc: "Team of three",
 				tryLink: "https://reverbify.meteor.com",
@@ -58,7 +57,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Trappans Personalportal",
 				descShort: "Club staff portal",
-				descLong: "",
+				descLong: "Staff portal for a local pub/club. I've worked on dynamic JavaScript- and some php-backend.",
 				image: "assets/img/portalen.png",
 				teamDesc: "Team of four",
 				tryLink: "",
@@ -69,7 +68,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Mapus",
 				descShort: "Study tool app",
-				descLong: "",
+				descLong: "An Android app for students to use for quickly communicating where to meet to study, with the help of interactive maps.",
 				image: "assets/img/mapus1.png",
 				teamDesc: "Team of five.",
 				tryLink: "",
@@ -80,24 +79,13 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Get Busy",
 				descShort: "\"Gamifying\" motivation app",
-				descLong: "",
+				descLong: "A mobile app for \"gamifying\" your motivation to achieve daily goals, built to try meteor.js.",
 				image: "assets/img/getbusy1.png",
 				teamDesc: "Personal project",
 				tryLink: "https://getbusy.meteor.com",
 				tryLinkDesc: "Try it!",
 				sourceLink: "",
 				sourceLinkDesc: ""
-			},
-			{
-				title: "Legomania",
-				descShort: "Lego database website",
-				descLong: "",
-				image: "assets/img/legomania.png",
-				teamDesc: "Team of five",
-				tryLink: "",
-				tryLinkDesc: "",
-				sourceLink: "https://github.com/Hedlundaren/Legomania",
-				sourceLinkDesc: "Source"
 			}
 		];
 
