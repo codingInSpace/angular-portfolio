@@ -19,17 +19,22 @@
 	<!-- Modules -->
 	<script src="app/app.js"></script>
 
-	<!-- masonry -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
+	<!-- Controllers -->
+	<script src="app/components/presentation/presentationController.js"></script>
+	<script src="app/components/projects/projectsController.js"></script>
+	<script src="app/components/modal/modalController.js"></script>
+
+	<!-- Directives -->
+	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
+	<script src="app/components/contact-links/contactLinks.js"></script>
 
 	<!-- angular modal service -->
 	<script src="assets/js/angular-modal-service.min.js"></script>
 
-	<!-- sticky-kit -->
+	<!-- Other JS imports -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.sticky-kit/1.1.2/jquery.sticky-kit.min.js"></script>
-
-	<!-- spin js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
 
 	<!-- Other CSS imports -->
@@ -113,9 +118,9 @@
 	<!-- side presentation - invisible in phone view-->
 	<div id="side-presentation" class="hidden-xs">
 		<div ng-controller="PresentationController as prez">
-	    	<img src="assets/img/jonathan.png" class="img-circle">
-	    	<h2>{{ prez.title }}</h2>
-	    	<p>{{ prez.presentationText }}</p>
+    	<img src="assets/img/jonathan.png" class="img-circle">
+    	<h2>{{ prez.title }}</h2>
+    	<p>{{ prez.presentationText }}</p>
 			<div id="contact-info">
 				<p>{{ prez.mail }}</p>
 			</div>
@@ -126,15 +131,15 @@
 	<!-- top presentation - visible in phone view-->
 	<div id="top-presentation" class="visible-xs">
 		<div ng-controller="PresentationController as prez">
-	    	<div class="container">
-		    	<div class="row">
-				    <div class="col-xs-12">
-				    	<h2>{{ prez.title }}</h2>
-				    	<p>{{ prez.presentationText }}</p>
+  		<div class="container">
+	    	<div class="row">
+			    <div class="col-xs-12">
+			    	<h2>{{ prez.title }}</h2>
+			    	<p>{{ prez.presentationText }}</p>
 						<contact-links item="prez"></contact-links>
-				    </div>
-			   </div>
-		    </div>
+			    </div>
+		   </div>
+	    </div>
 		</div>
 	</div>
 
@@ -146,15 +151,11 @@
 		    <!-- projects loop -->
 				<div ng-controller="ProjectsController as projects">
 			    <div ng-repeat="project in projects.myProjects">
-
-						<!-- <div class="grid-item" ng-click="showProjectModal(project.title, project.descLong, project.teamDesc, project.tryLink, project.tryLinkDesc, project.sourceLink, project.sourceLinkDesc)"> -->
 						<div class="grid-item" ng-click="showProjectModal(project)">
-
 			  			<img ng-src="{{ project.image }}">
 							<div class="card-inner">
-							<h2>{{ project.title }}</h2>
+								<h2>{{ project.title }}</h2>
 					  		<p>{{ project.description }}</p>
-					  		<!-- <project-card-buttons item="project"></project-card-buttons> -->
 							</div>
 					 	</div>
 					</div>
