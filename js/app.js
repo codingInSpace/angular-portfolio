@@ -8,8 +8,22 @@ angular.module('portfolioApp', ['angularModalService'])
 
 	})
 
-	.controller('ProjectsController', function() {
-		this.text = "Such projects much show";
+	.controller('ProjectsController', function($scope, ModalService) {
+		// this.text = "Such projects much show";
+
+		$scope.showProjectModal = function(){
+			ModalService.showModal({
+		    templateUrl: "js/templates/modaltemplate.html",
+		    controller: "ProjectsController"
+		  }).then(function(modal) {
+
+		    //it's a bootstrap element, use 'modal' to show it
+		    modal.element.modal();
+		    modal.close.then(function(result) {
+		      console.log(result);
+		    });
+		  });
+		}
 
 		this.myProjects =
 		[
@@ -73,8 +87,8 @@ angular.module('portfolioApp', ['angularModalService'])
 				sourceLink: "https://github.com/Hedlundaren/Legomania",
 				sourceLinkDesc: "Source"
 			}
-
 		];
+
 	})
 
 	.directive('projectCardButtons', function() {
