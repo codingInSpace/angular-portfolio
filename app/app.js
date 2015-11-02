@@ -11,10 +11,16 @@ angular.module('portfolioApp', ['angularModalService'])
 	.controller('ProjectsController', function($scope, ModalService) {
 		// this.text = "Such projects much show";
 
-		$scope.showProjectModal = function(){
+		$scope.showProjectModal = function(title, descLong, teamDesc){
+
 			ModalService.showModal({
 		    templateUrl: "app/templates/modaltemplate.html",
-		    controller: "ProjectsController"
+		    controller: "ModalController",
+				inputs: {
+	        title: title,
+					descLong: descLong,
+					teamDesc: teamDesc
+	      }
 		  }).then(function(modal) {
 
 		    //it's a bootstrap element, use 'modal' to show it
@@ -29,7 +35,8 @@ angular.module('portfolioApp', ['angularModalService'])
 		[
 			{
 				title: "Galaxy Goose",
-				description: "Interactive WebGL application",
+				descShort: "Interactive WebGL application",
+				descLong: "bla bla bla",
 				image: "assets/img/galaxygoose1.png",
 				teamDesc: "Team of five.",
 				tryLink: "https://codinginspace.github.io/myGalaxy",
@@ -39,7 +46,8 @@ angular.module('portfolioApp', ['angularModalService'])
 			},
 			{
 				title: "Reverbify",
-				description: "Reverb simulation app",
+				descShort: "Reverb simulation app",
+				descLong: "",
 				image: "assets/img/reverbify1.png",
 				teamDesc: "Team of three",
 				tryLink: "https://reverbify.meteor.com",
@@ -49,7 +57,8 @@ angular.module('portfolioApp', ['angularModalService'])
 			},
 			{
 				title: "Trappans Personalportal",
-				description: "Club staff portal",
+				descShort: "Club staff portal",
+				descLong: "",
 				image: "assets/img/portalen.png",
 				teamDesc: "Team of four",
 				tryLink: "",
@@ -59,7 +68,8 @@ angular.module('portfolioApp', ['angularModalService'])
 			},
 			{
 				title: "Mapus",
-				description: "Study tool app",
+				descShort: "Study tool app",
+				descLong: "",
 				image: "assets/img/mapus1.png",
 				teamDesc: "Team of five.",
 				tryLink: "",
@@ -69,7 +79,8 @@ angular.module('portfolioApp', ['angularModalService'])
 			},
 			{
 				title: "Get Busy",
-				description: "\"Gamifying\" motivation app",
+				descShort: "\"Gamifying\" motivation app",
+				descLong: "",
 				image: "assets/img/getbusy1.png",
 				teamDesc: "Personal project",
 				tryLink: "https://getbusy.meteor.com",
@@ -79,7 +90,8 @@ angular.module('portfolioApp', ['angularModalService'])
 			},
 			{
 				title: "Legomania",
-				description: "Lego database website",
+				descShort: "Lego database website",
+				descLong: "",
 				image: "assets/img/legomania.png",
 				teamDesc: "Team of five",
 				tryLink: "",
@@ -90,6 +102,27 @@ angular.module('portfolioApp', ['angularModalService'])
 		];
 
 	})
+
+	.controller('ModalController',  [
+	  '$scope', '$element', 'title', 'descLong', 'teamDesc', 'close',
+	  function($scope, $element, title, descLong, teamDesc, close) {
+
+			$scope.title = title;
+			$scope.descLong = descLong;
+			$scope.teamDesc = teamDesc;
+
+			$scope.close = function() {
+		 	  close({}, 500); 	// close, but give 500ms for animation
+		  };
+
+			//  This cancel function must use the bootstrap 'modal' function because
+		  //  it doesn't have the 'data-dismiss' attribute.
+		  $scope.cancel = function() {
+				$element.modal('hide');		//  Manually hide the modal.
+		    close({}, 500); 					// close, but give 500ms for animation
+		  };
+
+	}])
 
 	.directive('projectCardButtons', function() {
 		return {
