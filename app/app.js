@@ -13,7 +13,7 @@ angular.module('portfolioApp', ['angularModalService'])
 
 		$scope.showProjectModal = function(){
 			ModalService.showModal({
-		    templateUrl: "js/templates/modaltemplate.html",
+		    templateUrl: "app/templates/modaltemplate.html",
 		    controller: "ProjectsController"
 		  }).then(function(modal) {
 
@@ -30,7 +30,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Galaxy Goose",
 				description: "Interactive WebGL application",
-				image: "img/galaxygoose1.png",
+				image: "assets/img/galaxygoose1.png",
 				teamDesc: "Team of five.",
 				tryLink: "https://codinginspace.github.io/myGalaxy",
 				tryLinkDesc: "Try it!",
@@ -40,7 +40,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Reverbify",
 				description: "Reverb simulation app",
-				image: "img/reverbify1.png",
+				image: "assets/img/reverbify1.png",
 				teamDesc: "Team of three",
 				tryLink: "https://reverbify.meteor.com",
 				tryLinkDesc: "Try it!",
@@ -50,7 +50,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Trappans Personalportal",
 				description: "Club staff portal",
-				image: "img/portalen.png",
+				image: "assets/img/portalen.png",
 				teamDesc: "Team of four",
 				tryLink: "",
 				tryLinkDesc: "",
@@ -60,7 +60,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Mapus",
 				description: "Study tool app",
-				image: "img/mapus1.png",
+				image: "assets/img/mapus1.png",
 				teamDesc: "Team of five.",
 				tryLink: "",
 				tryLinkDesc: "",
@@ -70,7 +70,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Get Busy",
 				description: "\"Gamifying\" motivation app",
-				image: "img/getbusy1.png",
+				image: "assets/img/getbusy1.png",
 				teamDesc: "Personal project",
 				tryLink: "https://getbusy.meteor.com",
 				tryLinkDesc: "Try it!",
@@ -80,7 +80,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			{
 				title: "Legomania",
 				description: "Lego database website",
-				image: "img/legomania.png",
+				image: "assets/img/legomania.png",
 				teamDesc: "Team of five",
 				tryLink: "",
 				tryLinkDesc: "",
@@ -98,7 +98,7 @@ angular.module('portfolioApp', ['angularModalService'])
 			scope: {
 				item: "="
 			},
-			templateUrl: "js/directives/projectCardButtons.html"
+			templateUrl: "app/directives/projectCardButtons.html"
 		}
 	})
 
@@ -109,6 +109,6 @@ angular.module('portfolioApp', ['angularModalService'])
 			scope: {
 				item: "="
 			},
-			templateUrl: "js/directives/contactLinks.html"
+			templateUrl: "app/directives/contactLinks.html"
 		}
 	});
