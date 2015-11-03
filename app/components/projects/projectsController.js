@@ -2,6 +2,7 @@ angular.module('portfolioApp').controller('ProjectsController', function($scope,
 
   // $scope.showProjectModal = function(title, descLong, teamDesc, tryLink, tryLinkDesc, sourceLink, sourceLinkDesc){
   $scope.showProjectModal = function(project){
+    
     ModalService.showModal({
       templateUrl: "app/components/modal/modalView.html",
       controller: "ModalController",
