@@ -1,8 +1,7 @@
 angular.module('portfolioApp').controller('ProjectsController', function($scope, ModalService) {
 
-  // $scope.showProjectModal = function(title, descLong, teamDesc, tryLink, tryLinkDesc, sourceLink, sourceLinkDesc){
   $scope.showProjectModal = function(project){
-    
+
     ModalService.showModal({
       templateUrl: "app/components/modal/modalView.html",
       controller: "ModalController",
@@ -18,14 +17,18 @@ angular.module('portfolioApp').controller('ProjectsController', function($scope,
       }
     }).then(function(modal) {
 
-      //it's a bootstrap element, use 'modal' to show it
-      modal.element.modal();
-      modal.close.then(function(result) {
-        // console.log(result);
+      var inst = modal.element.remodal();  //get instance of the modal
+      inst.open();                         //call to open
+
+      $(document).on('closed', '.remodal', function (e) {
+        // console.log('Modal is closed' + (e.reason ? ', reason: ' + e.reason : ''));
+
+        inst.destroy();   //destroy DOM element
       });
     });
   }
 
+  // Project data
   this.myProjects =
   [
     {
