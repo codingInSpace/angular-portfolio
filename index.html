@@ -16,17 +16,17 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 
-	<!-- Modules -->
-	<script src="app/app.js"></script>
+	<!--three-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
 
-	<!-- Controllers -->
+	<!-- App -->
+	<script src="app/app.js"></script>
 	<script src="app/components/presentation/presentationController.js"></script>
 	<script src="app/components/projects/projectsController.js"></script>
 	<script src="app/components/modal/modalController.js"></script>
-
-	<!-- Directives -->
 	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
 	<script src="app/components/contact-links/contactLinks.js"></script>
+	<script src="app/components/webglTrinkets/webglTrinkets.js"></script>
 
 	<!-- angular modal service -->
 	<script src="assets/js/angular-modal-service.min.js"></script>
@@ -122,8 +122,9 @@
 			<div id="contact-info">
 				<p>{{ prez.mail }}</p>
 			</div>
-			<contact-links item="prez"></contact-links>
+			<contact-links item="prez"></contact-links><br>
 		</div>
+		<div webgl-trinkets id="trinkets-container" ></div> 
 	</div>
 
 	<!-- top presentation - visible in phone view-->
