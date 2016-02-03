@@ -7,12 +7,16 @@ angular.module('portfolioApp')
       link: function postLink(scope, element, attrs) {
 				//console.log("hej");
 				var camera, scene, renderer, controls, mesh,
+					amountTrinkets = 9,
+					trinketGroup,
 					contW = $(element).width(), //set by css
 					contH = 100,
 					windowHalfX = contW / 2,
           windowHalfY = contH / 2;
 
+				console.log("width, height = " + contW + ":" + contH);
         scope.init = function () {
+
 					// Camera
 					camera = new THREE.PerspectiveCamera( 20, contW / contH, 1, 1000 );
           camera.position.z = 100;
@@ -23,11 +27,34 @@ angular.module('portfolioApp')
           // Light
           scene.add( new THREE.AmbientLight( 0xffffff ));
 
-					// Cube test
-					var geometry = new THREE.BoxGeometry( 10, 10, 10 );
-					var material = new THREE.MeshBasicMaterial({});
-					mesh = new THREE.Mesh( geometry, material );
-					scene.add( mesh );
+					// Objects
+					trinketGroup = new THREE.Group();
+
+					var geometry = new THREE.OctahedronGeometry(3);
+					var material = new THREE.MeshPhongMaterial({
+                color: '#990099',
+                emissive: new THREE.Color("rgb(30, 30, 30)"),
+                transparent: true
+              });
+
+					for (var i = 0; i < amountTrinkets; ++i) {
+						var trinket = new THREE.Mesh(geometry, material);
+
+						var xPos = 0, yPos = 0, zPos = 0;
+
+						while(Math.abs(xPos) <= 8 && Math.abs(zPos) <= 8) {
+							xPos = Math.random() * (12 - -12) - 12;
+							zPos = Math.random() * (12 - -12) - 12;
+						}
+
+						yPos = Math.random() * (7 - -7) - 7;
+
+						trinket.position.set(xPos, yPos, zPos);
+						trinket.scale.set(0.85, 1, 0.85);
+						trinketGroup.add(trinket);
+					}
+
+					scene.add(trinketGroup);
 
           // Renderer
           renderer = new THREE.WebGLRenderer( { alpha: true } );
@@ -44,8 +71,7 @@ angular.module('portfolioApp')
         };
 
 				scope.render = function () {
-					mesh.rotation.x += 0.005;
-					mesh.rotation.y += 0.01;
+					trinketGroup.rotation.y += 0.005;
 					renderer.render( scene, camera );
 				};
 
