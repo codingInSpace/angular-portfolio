@@ -145,19 +145,24 @@
 	<!-- masonry tiles -->
   <div id="main-container" class="container">
     <div class="col-sm-10 col-md-offset-1">
-		<h2 class="text-center">Portfolio</h2>
+			<h2 class="text-center">Portfolio</h2>
 	    <div id="grid-container">
 
 		    <!-- projects loop -->
 				<div ng-controller="ProjectsController as projects">
 			    <div ng-repeat="project in projects.myProjects">
 						<div class="grid-item" ng-click="showProjectModal(project)">
-			  			<img ng-src="{{ project.image }}">
-							<div class="card-inner">
-								<h2>{{ project.title }}</h2>
-					  		<p>{{ project.description }}</p>
-							</div>
-					 	</div>
+							<img ng-src="{{ project.image }}">
+								<div class="card-inner">
+									<h2>{{ project.title }}</h2>
+								</div>
+								<div class="grid-mask">
+									<div>
+										<h2>{{ project.title }}</h2>
+										<p>{{ project.descShort }}</p>
+									</div>
+								</div>
+						</div>
 					</div>
 				</div>
 
