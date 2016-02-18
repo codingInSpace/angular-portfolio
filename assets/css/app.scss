@@ -1,3 +1,16 @@
+$cardBgColor: #fff;
+$cardShadowColor: #CCC;
+$cardH2Color: rgb(60, 20, 8);
+$cardMaskColor: rgb(179, 255, 217);
+
+$linkIconColor: #000;
+$linkIconColorHover: rgb(71, 209, 255);
+
+$screenWidthLargest: 1640px;
+$screenWidthMedium: 1200px;
+$screenWidthSmall: 730px;
+$screenWidthXsmall: 650px;
+
 body {
     /* Background pattern from subtlepatterns.com */
     background: #ffffff url("../img/brushed.png");
@@ -11,7 +24,6 @@ body {
     left:0;
     width: 100%;
     height: 100%;
-    /*background-color: rgba(50, 50, 50, 0.3);*/
 }
 
 #progress-bar {
@@ -43,21 +55,14 @@ body {
     max-width: 200px;
     min-height: 520px;
     color: #000;
-}
 
-#side-presentation h2{
-    font-size: 20px;
-}
-
-#side-presentation p {
-    font-size: 14px;
-    /*margin-bottom: 20px;*/
-}
-
-#side-presentation img{
-    display: block;
-    width: 100%;
-    height: auto;
+		h2 {font-size: 20px;}
+		p {font-size: 14px;}
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 }
 
 #contact-info {
@@ -78,29 +83,40 @@ body {
     margin-bottom: 5%;
     padding: 2px;
     width: 100%;
-}
 
-#top-presentation img {
-    width: 100%;
-}
+    img{width: 100%;}
+    h2 {font-size: 18px;}
+ 		p{font-size: 12px;}
 
-#top-presentation h2 {
-    font-size: 18px;
-}
-
-#top-presentation p {
-    font-size: 12px;
 }
 
 #grid-container {
     display: none; /*to be changed on images load*/
 }
 
+.grid-mask {
+  	display: block;
+  	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	height: 100%;
+  	text-align: center;
+  	opacity: 0;
+		background-color: $cardMaskColor;
+    transition: all 0.2s ease-in-out;
+
+		div {
+			position: absolute;
+			width: 100%;
+			top: 30%;
+		}
+}
+
 .grid-item {
-    background: #fff;
+    background: $cardBgColor;
     border: 1px solid rgba(100, 100, 100, 0.2);
-    border-bottom: 2px solid #CCC;
-    border-right: 2px solid #CCC;
+    border-bottom: 2px solid $cardShadowColor;
+    border-right: 2px solid $cardShadowColor;
     border-radius: 8px;
     margin: 10px;
     overflow: hidden;
@@ -112,84 +128,52 @@ body {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-}
 
-.grid-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    opacity: 0.9;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.grid-item .card-inner {
-  padding: 10px;
-  text-align: center;
-}
-
-.grid-item h2 {
-    margin: 5px 0px 10px;
-    font-size: 24px;
-    font-weight: 350;
-    color: rgb(60, 20, 8);
-    opacity: 0.9;
-}
-
-.grid-item h3 {
-    margin: 5px 0px 10px;
-    font-size: 16px;
-    font-weight: 700;
-    color: rgb(146, 77, 8);
-    opacity: 0.7;
-}
-
-.grid-item p {
-    font-family: inherit;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
-}
-
-.grid-mask {
-  	display: block;
-  	position: absolute;
-  	bottom: 0;
-  	width: 100%;
-  	height: 100%;
-  	text-align: center;
-  	opacity: 0;
-		background-color: rgb(230, 230, 255);	
-    transition: all 0.2s ease-in-out;
-}
-
-.grid-mask div{
-		position: absolute;
-		width: 100%;
-		top: 30%;
-}
-
-.grid-item:hover {
-    cursor: pointer;
-}
-.grid-item:hover {
-		.grid-item img {
-			display: none;
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			overflow: hidden;
+			opacity: 0.9;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		}
+
+		.card-inner {
+			padding: 10px;
+			text-align: center;
+		}
+
+ 		h2 {
+			margin: 5px 0px 10px;
+			font-size: 24px;
+			font-weight: 350;
+			color: $cardH2Color;
+			opacity: 0.9;
+		}
+
+ 		p {
+			font-family: inherit;
+			font-weight: normal;
+			text-rendering: optimizeLegibility;
+		}
+
+}
+
+.grid-item:hover {
+		cursor: pointer;
+}
+.grid-item:hover {
 		.grid-mask {
 			opacity: 0.97;
 		}
 }
-.grid-item:hover h2 {
-	opacity: 1;
-	color: rgb(51, 0, 51);
-}
 
 .contact-links i {
-    color: #000;
+    color: $linkIconColor;
     cursor: pointer;
 }
 .contact-links i:hover {
-    color: rgb(71, 209, 255);
+    color: $linkIconColorHover;
 }
 
 /*dynamic width for webgl canvas*/
@@ -214,13 +198,12 @@ body {
 /* smaller desktop screens */
 @media (min-width: 1200px) and (max-width: 1640px) {
     .grid-item {
-        width: 250px;
-    }
-
-    .grid-item p {
-        font-size: 2rem;
-        line-height: 1.6;
-    }
+			width: 250px;
+			p {
+				font-size: 2rem;
+				line-height: 1.6;
+			}
+		}
 
     /*override bootstrap, better view for masonry tiles*/
     #main-container {
@@ -232,23 +215,22 @@ body {
 /* tablet */
 @media (min-width: 730px) and (max-width: 1224px) {
     .grid-item {
-        width:  250px;
-    }
-    .grid-item p {
-        font-size: 1.5rem;
+			width:  250px;
+			p {
+				font-size: 1.5rem;
+			}
     }
 }
 
 /* auto scaling two column cards break point */
 @media (max-width: 730px) {
     .grid-item {
-        margin: 1%;
-        width:  47%;
-        font-size: 10px;
-    }
-
-    .grid-item a {
-        width: 50%;
+      margin: 1%;
+      width:  47%;
+      font-size: 10px;
+			a {
+				width: 50%;
+			}
     }
 
 }
