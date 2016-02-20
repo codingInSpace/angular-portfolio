@@ -5,7 +5,7 @@ angular.module('portfolioApp')
     return {
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
-				//console.log("hej");
+ 
 				var camera, scene, renderer, controls, mesh,
 					amountTrinkets = 8,
 					trinketGroup,
@@ -15,8 +15,7 @@ angular.module('portfolioApp')
 					windowHalfX = contW / 2,
           windowHalfY = contH / 2;
 
-				//console.log("width, height = " + contW + ":" + contH);
-        scope.init = function () {
+					scope.init = function () {
 
 					// Camera
 					camera = new THREE.PerspectiveCamera( 20, contW / contH, 1, 1000 );
@@ -26,7 +25,11 @@ angular.module('portfolioApp')
           scene = new THREE.Scene();
 
           // Light
-          scene.add( new THREE.AmbientLight( 0xffffff ));
+          scene.add( new THREE.AmbientLight( 0xcccccc ));
+
+          var light = new THREE.PointLight( 0xffffff, 1, 65 );
+					light.position.set( -15, 10, 10);
+					scene.add( light );
 
 					// Objects
 					trinketGroup = new THREE.Group();
@@ -35,7 +38,6 @@ angular.module('portfolioApp')
 						light: '#990099',
 						dark: '#800080'
 					}
-
 					
 					for (var i = 0; i < amountTrinkets; ++i) {
 						var geometry = new THREE.OctahedronGeometry(3);
@@ -44,22 +46,18 @@ angular.module('portfolioApp')
 							var face = geometry.faces[j];
 							var factor = Math.random();
 
-							if (factor <= 0.2) {
+							if (factor <= 0.15) {
 								face.color.set( trinketColors.dark );
 							} else {
 								face.color.set( trinketColors.light );
 							}
 						}
 
-						//geometry.elementsNeedUpdate = true;
-
-						var material = new THREE.MeshBasicMaterial({
-							shading: THREE.FlatShading,
+						var material = new THREE.MeshPhongMaterial({
+							shading: THREE.SmoothShading,
               vertexColors: THREE.FaceColors,
 							transparent: true
             });
-
-
 
 						var trinket = new THREE.Mesh(geometry, material);
 
