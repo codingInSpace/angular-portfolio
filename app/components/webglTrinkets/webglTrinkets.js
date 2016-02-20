@@ -14,7 +14,7 @@ angular.module('portfolioApp')
 					windowHalfX = contW / 2,
           windowHalfY = contH / 2;
 
-				console.log("width, height = " + contW + ":" + contH);
+				//console.log("width, height = " + contW + ":" + contH);
         scope.init = function () {
 
 					// Camera
@@ -62,7 +62,13 @@ angular.module('portfolioApp')
           renderer.setSize( contW, contH );
           element[0].appendChild( renderer.domElement );
 
-
+					// Handle any resize effects
+					window.addEventListener('resize', function() {
+						contW = $(element).width(); //set by css
+						camera.aspect = contW / contH;
+						camera.updateProjectionMatrix();
+						renderer.setSize( contW, contH );
+					});
 				};
 
         scope.animate = function () {
