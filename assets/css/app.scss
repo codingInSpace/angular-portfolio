@@ -48,6 +48,7 @@ body {
 #side-presentation {
     position: absolute;
     display: block;
+    visibility: hidden;
     top: 25px;
     right: 0px;
     margin-right: 5px;
@@ -90,8 +91,8 @@ body {
 
 }
 
-#grid-container {
-    display: none; /*to be changed on images load*/
+#main-container {
+    visibility: hidden;
 }
 
 .grid-mask {

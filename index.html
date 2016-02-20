@@ -5,7 +5,22 @@
 	<title>Jonathan Grangien</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- angular libs -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- App -->
+	<script src="app/app.js"></script>
+	<script src="app/components/presentation/presentationController.js"></script>
+	<script src="app/components/projects/projectsController.js"></script>
+	<script src="app/components/modal/modalController.js"></script>
+	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
+	<script src="app/components/contact-links/contactLinks.js"></script>
+	<script src="app/components/webglTrinkets/webglTrinkets.js"></script>
+
+	<!-- angular modal service -->
+	<script src="assets/js/angular-modal-service.min.js"></script>
 
 </head>
 <body>
@@ -14,7 +29,6 @@
 	<script>
 	$(document).ready(function() {
 		$('#side-presentation').stick_in_parent();
-
 		var spinnerOptions = {
 		  lines: 11,
 		  length: 8,
@@ -26,7 +40,7 @@
 		  opacity: 0.25,
 		  rotate: 0,
 		  direction: 1,
-		  speed: 2.4,
+		  speed: 3.2,
 		  trail: 81,
 		  fps: 24,	//"cinematic experience"
 		  zIndex: 2e9,
@@ -34,7 +48,7 @@
 		  top: '50%',
 		  left: '50%',
 		  shadow: true,
-		  hwaccel: false,
+		  hwaccel: true,
 		  position: 'absolute'
 		}
 		var target = document.getElementById('loading-screen')
@@ -42,18 +56,23 @@
 		var countImages = $('#grid-container img').size();
 
 		$('#grid-container').imagesLoaded()
+
+		// when all images loaded or failed
 		.always( function(){
 
-			// when all images loaded or failed
-			$('#loading-screen').fadeOut("fast");
-			$('#grid-container').fadeIn("fast");
+			$('#loading-screen').css("display", "none");
 			spinner.stop();
 
 			// initialize masonry
-			$('#grid-container').masonry({
-			  itemSelector: '.grid-item',
-			  columnWidth: 0		//why and how.
+			var grid = $('#grid-container').masonry({
+				itemSelector: '.grid-item',
+				columnWidth: 0		//why and how.
 			});
+			
+			$('#main-container').css("visibility", "visible");
+			$('#side-presentation').css("visibility", "visible");
+			grid.masonry();
+
 		})
 		.progress( function( instance, image ) {
 			if(image.isLoaded) {
@@ -63,6 +82,8 @@
 				var countLoadedImages = $('#grid-container img.loaded').size();
 				var width = 100 * (countLoadedImages / countImages) + '%';
 				$('#progress-bar > #progress').css({ 'width' : width });
+			} else {
+				console.log("An image failed to load");
 			}
   	});
 	});
@@ -137,25 +158,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-	<!-- angular libs -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
-
 	<!--three-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
-
-	<!-- App -->
-	<script src="app/app.js"></script>
-	<script src="app/components/presentation/presentationController.js"></script>
-	<script src="app/components/projects/projectsController.js"></script>
-	<script src="app/components/modal/modalController.js"></script>
-	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
-	<script src="app/components/contact-links/contactLinks.js"></script>
-	<script src="app/components/webglTrinkets/webglTrinkets.js"></script>
-
-	<!-- angular modal service -->
-	<script src="assets/js/angular-modal-service.min.js"></script>
-
+	
 	<!-- Other JS imports -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
