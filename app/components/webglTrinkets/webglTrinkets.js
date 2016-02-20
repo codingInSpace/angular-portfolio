@@ -7,8 +7,9 @@ angular.module('portfolioApp')
       link: function postLink(scope, element, attrs) {
 				//console.log("hej");
 				var camera, scene, renderer, controls, mesh,
-					amountTrinkets = 9,
+					amountTrinkets = 7,
 					trinketGroup,
+					tweenElems = [],
 					contW = $(element).width(), //set by css
 					contH = 100,
 					windowHalfX = contW / 2,
@@ -52,9 +53,54 @@ angular.module('portfolioApp')
 						trinket.position.set(xPos, yPos, zPos);
 						trinket.scale.set(0.85, 1, 0.85);
 						trinketGroup.add(trinket);
+
+						var xEndValue = Math.random() * (12 - -12) - 12;
+						var yEndValue = Math.random() * (6 - -6) - 6;
+						var zEndValue = Math.random() * (10 - -10) -10;
+
+						var tweenElem = {
+							x: xPos,
+							x2: xEndValue,
+							y: yPos,
+							y2: yEndValue,
+							z: zPos,
+							z2: zEndValue,
+							obj: trinket
+						}
+						
+						tweenElems.push(tweenElem);
+
 					}
 
 					scene.add(trinketGroup);
+
+					var animDuration = 8000;
+					var delayFactor = 6000;
+
+					for (var i = 0; i < amountTrinkets; ++i) {
+						var updateCallback = function() {
+							this.obj.position.x = this.x;
+							this.obj.position.y = this.y;
+							this.obj.position.z = this.z;
+						}
+
+						var tween = new TWEEN.Tween(tweenElems[i])
+							.to({ x: tweenElems[i].x2, y: tweenElems[i].y2, z: tweenElems[i].z2 }, animDuration)
+							.delay(Math.random() * delayFactor)
+							.onUpdate( updateCallback )
+							.easing(TWEEN.Easing.Quadratic.In)
+							.start();
+
+						var tweenBack = new TWEEN.Tween(tweenElems[i], false)
+							.to({ x: tweenElems[i].x, y: tweenElems[i].y, z: tweenElems[i].z }, animDuration)
+							.delay(Math.random() * delayFactor)
+							.onUpdate( updateCallback )
+							.easing(TWEEN.Easing.Sinusoidal.InOut);
+
+						tween.chain(tweenBack);
+						tweenBack.chain(tween);
+
+					}
 
           // Renderer
           renderer = new THREE.WebGLRenderer( { alpha: true } );
@@ -71,13 +117,14 @@ angular.module('portfolioApp')
 					});
 				};
 
-        scope.animate = function () {
+        scope.animate = function (time) {
           requestAnimationFrame( scope.animate );
+          TWEEN.update(time);
           scope.render();
         };
 
 				scope.render = function () {
-					trinketGroup.rotation.y += 0.005;
+					trinketGroup.rotation.y += 0.0001;
 					renderer.render( scene, camera );
 				};
 
