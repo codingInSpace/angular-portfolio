@@ -85,6 +85,17 @@ angular.module('portfolioApp').controller('ProjectsController', function($scope,
       tryLinkDesc: "Try it!",
       sourceLink: "",
       sourceLinkDesc: ""
-    }
+    },
+		{
+			title: "Crystalline Clusters",
+			descShort: "Weird WebGL experiment",
+			descLong: "A WebGL scene with randomly computed crystal-like objects and some funky mathematically random and static music. A mess to implement cool effects on and play around with.",
+			image: "assets/img/crystalline.jpg",
+			teamDesc: "Personal project",
+			tryLink: "https://codinginspace.github.io/crystalline-clusters",
+			tryLinkDesc: "Try it!",
+			sourceLink: "https://github.com/codingInSpace/crystalline-clusters",
+			sourceLinkDesc: "Source"
+		}
   ];
 });
