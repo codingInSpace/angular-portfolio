@@ -8,10 +8,9 @@ $cardMaskColor: rgb(179, 255, 217);
 $linkIconColor: #000;
 $linkIconColorHover: rgb(71, 209, 255);
 
-$screenWidthLargest: 1640px;
-$screenWidthMedium: 1200px;
-$screenWidthSmall: 730px;
-$screenWidthXsmall: 650px;
+$screenXL: 1640px;
+$screenLG: 1200px;	//bootstrap lg min
+$screenXS: 767px;		//bootstrap xs max
 
 body {
     /* Background pattern from subtlepatterns.com */
@@ -164,8 +163,6 @@ body {
 
 .grid-item:hover {
 		cursor: pointer;
-}
-.grid-item:hover {
 		.grid-mask {
 			opacity: 0.97;
 		}
@@ -185,7 +182,7 @@ body {
 }
 
 /* big desktop screens and up */
-@media only screen and (min-width: 1640px) {
+@media only screen and (min-width: $screenXL) {
     .grid-item p {
         font-size: 2rem;
         line-height: 1.6;
@@ -199,7 +196,7 @@ body {
 }
 
 /* smaller desktop screens */
-@media (min-width: 1200px) and (max-width: 1640px) {
+@media (min-width: $screenLG) and (max-width: $screenXL) {
     .grid-item {
 			width: 250px;
 			p {
@@ -216,7 +213,7 @@ body {
 }
 
 /* tablet */
-@media (min-width: 730px) and (max-width: 1224px) {
+@media (min-width: $screenXS) and (max-width: $screenLG) {
     .grid-item {
 			width:  250px;
 			p {
@@ -226,7 +223,7 @@ body {
 }
 
 /* auto scaling two column cards break point */
-@media (max-width: 730px) {
+@media (max-width: $screenXS) {
     .grid-item {
       margin: 1%;
       width:  47%;
@@ -236,11 +233,11 @@ body {
 			}
     }
 
+		.grid-item:hover {
+			.grid-mask {
+				opacity: 0;
+			}
+		}
+
 }
 
-/* break for top presentation views */
-@media (max-width: 650px) {
-    .grid-item a {
-        font-size: 8px;
-    }
-}
