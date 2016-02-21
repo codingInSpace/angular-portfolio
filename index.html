@@ -7,24 +7,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-	<!-- angular libs -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
-
-	<!-- App -->
-	<script src="app/app.js"></script>
-	<script src="app/components/presentation/presentationController.js"></script>
-	<script src="app/components/projects/projectsController.js"></script>
-	<script src="app/components/modal/modalController.js"></script>
-	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
-	<script src="app/components/contact-links/contactLinks.js"></script>
-	<script src="app/components/webglTrinkets/webglTrinkets.js"></script>
-	
-</head>
+	</head>
 <body>
 
 	<!-- jQuery crutches, to be replaced by angular functionality -->
@@ -85,7 +68,7 @@
 				var width = 100 * (countLoadedImages / countImages) + '%';
 				$('#progress-bar > #progress').css({ 'width' : width });
 			} else {
-				console.log("An image failed to load");
+				console.log("Image " + image.img.src + " failed to load");
 			}
   	});
 	});
@@ -100,7 +83,7 @@
 
 	<!-- side presentation - invisible in phone view-->
 	<div id="side-presentation" class="hidden-xs">
-		<div class ="ng-cloak" ng-controller="PresentationController as prez">
+		<div class="ng-cloak" ng-controller="PresentationController as prez">
     	<img src="assets/img/jonathan.png" class="img-circle">
     	<h2>{{ prez.title }}</h2>
     	<p>{{ prez.presentationText }}</p>
@@ -155,12 +138,33 @@
 		</div>
 	</div>
 
-
+	<!-- CSS imports -->
+	<link rel="stylesheet" href="assets/css/app.css">
+	<link rel="stylesheet" href="assets/font-awesome-4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/remodal.css">
+	<link rel="stylesheet" href="assets/css/remodal-custom-theme.css">
 
 	<!--WebGL-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
 	<script src="assets/js/Tween.js"></script>
 
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<!-- angular libs -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+
+	<!-- App -->
+	<script src="app/app.js"></script>
+	<script src="app/components/presentation/presentationController.js"></script>
+	<script src="app/components/projects/projectsController.js"></script>
+	<script src="app/components/modal/modalController.js"></script>
+	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
+	<script src="app/components/contact-links/contactLinks.js"></script>
+	<script src="app/components/webglTrinkets/webglTrinkets.js"></script>
+	
 	<!-- angular modal service -->
 	<script src="assets/js/angular-modal-service.min.js"></script>
 
@@ -170,12 +174,6 @@
 	<script src="https://cdn.jsdelivr.net/jquery.sticky-kit/1.1.2/jquery.sticky-kit.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
 	<script src="assets/js/remodal.min.js"></script>
-
-	<!-- CSS imports -->
-	<link rel="stylesheet" href="assets/css/app.css">
-	<link rel="stylesheet" href="assets/font-awesome-4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/remodal.css">
-	<link rel="stylesheet" href="assets/css/remodal-custom-theme.css">
 
 </body>
 </html>
