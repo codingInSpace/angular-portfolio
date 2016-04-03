@@ -42,6 +42,17 @@ angular.module('portfolioApp').controller('ProjectsController', function($scope,
       sourceLink: "https://github.com/codingInSpace/myGalaxy",
       sourceLinkDesc: "Source"
     },
+		{
+			title: "SPH fluid simulation on the GPU",
+			descShort: "3D water simulation",
+			descLong: "Water simulation using a Smoothed Particle Hydrodynamics method, governered by Navier-Stokes equations. The implementation is in C++ with rendering through OpenGL and particle calculations with OpenCL. The simulation is in real-time with properties adjustable by a small GUI.",
+			image: "assets/img/watersim.jpg",
+			teamDesc: "Team of five",
+			tryLink: "",
+			tryLinkDesc: "View it!",
+			sourceLink: "https://github.com/Hedlundaren/vattenoverhuvudet",
+			sourceLinkDesc: "Source"
+		},
     {
       title: "Reverbify",
       descShort: "Reverb simulation app",
@@ -85,17 +96,7 @@ angular.module('portfolioApp').controller('ProjectsController', function($scope,
       tryLinkDesc: "Try it!",
       sourceLink: "",
       sourceLinkDesc: ""
-    },
-		{
-			title: "Crystalline Clusters",
-			descShort: "Weird WebGL experiment",
-			descLong: "A WebGL scene with randomly computed crystal-like objects and some funky mathematically random and static music. A mess to implement cool effects on and play around with.",
-			image: "assets/img/crystalline.jpg",
-			teamDesc: "Personal project",
-			tryLink: "https://codinginspace.github.io/crystalline-clusters",
-			tryLinkDesc: "Try it!",
-			sourceLink: "https://github.com/codingInSpace/crystalline-clusters",
-			sourceLinkDesc: "Source"
-		}
+    }
+
   ];
 });
