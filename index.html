@@ -8,10 +8,20 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css">
+
 	<!--Angular is loaded first for compatibility with imagesLoaded-->
 	<!-- angular libs -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+	<!-- angular modal service -->
+	<script src="assets/js/angular-modal-service.min.js"></script>
 
 	<!-- App -->
 	<script src="app/app.js"></script>
@@ -128,6 +138,8 @@
 	<!-- masonry tiles -->
   <div id="main-container" class="container">
     <div class="col-sm-10 col-md-offset-1">
+		<md-tabs md-dynamic-height>
+		<md-tab label="Tab 1">
 			<h2 class="text-center ng-cloak">Portfolio</h2>
 	    <div id="grid-container">
 
@@ -151,6 +163,14 @@
 				</div>
 
 			</div>
+		</md-tab>
+		<md-tab label="Tab 2">
+			<md-content>
+				hej
+			</md-content>
+		</md-tab>
+
+	</md-tabs>
 		</div>
 	</div>
 
@@ -168,9 +188,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	
-	<!-- angular modal service -->
-	<script src="assets/js/angular-modal-service.min.js"></script>
-
+	
 	<!-- Other JS imports -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>

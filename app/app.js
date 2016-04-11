@@ -1,1 +1,1 @@
-angular.module('portfolioApp', ['angularModalService']);
+angular.module('portfolioApp', ['angularModalService', 'ngMaterial']);
