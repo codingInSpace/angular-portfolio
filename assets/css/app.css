@@ -44,7 +44,7 @@ body {
   color: #000; }
   #side-presentation h2 {
     font-size: 20px; }
-  #side-presentation p {
+  #side-presentation p, #side-presentation a {
     font-size: 14px; }
   #side-presentation img {
     display: block;
@@ -134,6 +134,10 @@ body {
   cursor: pointer; }
   .grid-item:hover .grid-mask {
     opacity: 0.97; }
+
+.btn-vibrant {
+  background-color: #e0ccff;
+  border-color: #ccc; }
 
 .contact-links i {
   color: black;

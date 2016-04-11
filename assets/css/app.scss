@@ -5,6 +5,8 @@ $cardShadowColor: #CCC;
 $cardH2Color: rgb(60, 20, 8);
 $cardMaskColor: rgb(179, 255, 217);
 
+$vibrantColor: #e0ccff;
+
 $linkIconColor: #000;
 $linkIconColorHover: rgb(71, 209, 255);
 
@@ -166,6 +168,11 @@ body {
 		.grid-mask {
 			opacity: 0.97;
 		}
+}
+
+.btn-vibrant {
+	background-color: $vibrantColor;
+	border-color: #ccc;
 }
 
 .contact-links i {
