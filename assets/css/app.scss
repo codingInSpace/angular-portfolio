@@ -17,6 +17,9 @@ $screenXS: 767px;		//bootstrap xs max
 body {
     /* Background pattern from subtlepatterns.com */
     background: #ffffff url("../img/brushed.png");
+    margin: 0;
+		padding-bottom: 80px;
+		height: auto; //override stupid angular material setting
 }
 
 #loading-screen {
@@ -27,6 +30,48 @@ body {
     left:0;
     width: 100%;
     height: 100%;
+}
+
+#header {
+	padding: 1.5% 0;
+}
+
+.header-list {
+	padding: 0;
+	text-align: center;
+	width: 100%;
+	}
+
+.header-list li {
+	padding: 0;
+	list-style: none;
+	display: inline;
+}
+
+.header-item {
+	/*zoom: 1;*/
+	vertical-align: middle;
+	/*margin: 0;*/
+	height: 100%;
+}
+
+.header-item a {
+	color: rgba(30, 30, 30, 0.3);
+	text-decoration: none;
+	font-family: 'Poiret One', cursive;
+	padding: .5em 1em;
+	font-weight: 100;
+	font-size: 350%;
+}
+
+.header-item a:hover,
+.header-item a:focus {
+	text-decoration: none;
+	background: none;
+}
+
+.header-item-selected a {
+	color: rgb(255,64,129);
 }
 
 #progress-bar {
@@ -231,20 +276,23 @@ body {
 
 /* auto scaling two column cards break point */
 @media (max-width: $screenXS) {
-    .grid-item {
-      margin: 1%;
-      width:  47%;
-      font-size: 10px;
-			a {
-				width: 50%;
-			}
-    }
+  .header-item a {
+  	font-size: 260%;
+		padding: 1em 1em;
+	}
 
-		.grid-item:hover {
-			.grid-mask {
-				opacity: 0;
-			}
+	.grid-item {
+		margin: 1%;
+		width:  47%;
+		font-size: 10px;
+		a {
+			width: 50%;
 		}
+	}
 
+	.grid-item:hover {
+		.grid-mask {
+			opacity: 0;
+		}
+	}
 }
-
