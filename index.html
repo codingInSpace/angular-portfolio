@@ -15,6 +15,8 @@
 	<!-- jQuery crutches, to be replaced by angular functionality -->
 	<script>
 	$(document).ready(function() {
+		var grid;
+
 		$('#side-presentation').stick_in_parent();
 		var spinnerOptions = {
 		  lines: 11,
@@ -51,7 +53,7 @@
 			spinner.stop();
 
 			// initialize masonry
-			var grid = $('#grid-container').masonry({
+			grid = $('#grid-container').masonry({
 				itemSelector: '.grid-item',
 				columnWidth: 0		//why and how.
 			});
@@ -59,6 +61,10 @@
 			$('#main-container').css("visibility", "visible");
 			$('#side-presentation').css("visibility", "visible");
 			grid.masonry();
+
+			if (window.location.hash === "#/resume") {
+				$('#grid-container').hide();
+			}
 
 		})
 		.progress( function( instance, image ) {
@@ -73,6 +79,20 @@
 				console.log("Image " + image.img.src + " failed to load");
 			}
   	});
+
+  	$(window).bind( 'hashchange', function(e) { 
+			var anchor = document.location.hash;
+
+			if (anchor === '') {
+				$('#grid-container').show();
+				grid.masonry();
+			}
+			
+			else if (anchor === '#/resume') {
+				$('#grid-container').hide();
+			}
+    });
+
 	});
 	</script>
 
@@ -115,7 +135,7 @@
 
 	<div header-bar id="header"></div>
 
-	<!-- masonry tiles -->
+	<!-- main content -->
   <div id="main-container" class="container">
     <div class="col-sm-10 col-md-offset-1">
 	    <div id="grid-container">
