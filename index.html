@@ -64,6 +64,9 @@
 
 			if (window.location.hash === "#/resume") {
 				$('#grid-container').hide();
+				$('#resume-item').addClass("header-item-selected");
+			} else {
+				$('#portfolio-item').addClass("header-item-selected");
 			}
 
 		})
@@ -85,11 +88,15 @@
 
 			if (anchor === '') {
 				$('#grid-container').show();
+				$('#portfolio-item').addClass("header-item-selected");
+				$('#resume-item').removeClass("header-item-selected");
 				grid.masonry();
 			}
 			
 			else if (anchor === '#/resume') {
 				$('#grid-container').hide();
+				$('#resume-item').addClass("header-item-selected");
+				$('#portfolio-item').removeClass("header-item-selected");
 			}
     });
 
@@ -186,10 +193,10 @@
 	<script src="app/components/presentation/presentationController.js"></script>
 	<script src="app/components/projects/projectsController.js"></script>
 	<script src="app/components/modal/modalController.js"></script>
+	<script src="app/components/headerbar/headerBar.js"></script>
 	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
 	<script src="app/components/contact-links/contactLinks.js"></script>
 	<script src="app/components/webglTrinkets/webglTrinkets.js"></script>
-	<script src="app/components/headerbar/headerBar.js"></script>
 
 	<!--WebGL-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>

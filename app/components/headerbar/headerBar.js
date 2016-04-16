@@ -1,8 +1,8 @@
 angular.module('portfolioApp')
-	.directive('headerBar', function () {
+	.directive('headerBar', function ($location) {
     return {
         restrict: 'A', 
-        replace: true,
-        templateUrl: "app/components/headerbar/headerBar.html",
+				replace: false,
+        templateUrl: "app/components/headerbar/headerBar.html"
     }
 });
