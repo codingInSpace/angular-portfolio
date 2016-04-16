@@ -1,6 +1,6 @@
 angular.module('portfolioApp').controller('ResumeController', function($scope) {
 
-	this.linkText = "View full formal resume here";
+	this.linkText = "View formal resume";
 	this.link = "assets/docs/resume.pdf";
 	
   this.experiences =
