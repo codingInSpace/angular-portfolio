@@ -1,5 +1,41 @@
 <div>
 	<div ng-controller="ResumeController as ctrl">
-		<p>{{ ctrl.test }}</p>
+		<div class="text-center">
+			<a ng-href="{{ ctrl.link }}"> {{ ctrl.linkText }} </a>
+		</div>
+
+		<div class="col-sm-8 col-sm-offset-2">
+			<h2>Experiences</h2>
+			<div ng-repeat="exp in ctrl.experiences">
+				<h3>{{ exp.title }}</h3>
+				<p><strong>{{ exp.subTitle }}</strong></p>
+				<p>({{ exp.date }})</p>
+				<p>{{ exp.description }}</p>
+				<br>
+			</div>
+
+			<h2>Software skills</h2>
+			<h3>Good</h3>
+			<p>{{ ctrl.goodSkills }}</p>
+			<h3>Intermediate</h3>
+			<p>{{ ctrl.intermediateSkills }}</p>
+			<h3>Basic</h3>
+			<p>{{ ctrl.basicSkills }}</p>
+			<br>
+
+			<h2>Education</h2>
+			<div ng-repeat="edu in ctrl.education">
+				<p><strong>{{ edu.title }}</strong></p>
+				<p>{{ edu.subTitle }}</p>
+				<p>{{ edu.date }}</p>
+				<br>
+			</div>
+
+			<h2>Communication skills</h2>
+			<div ng-repeat="comm in ctrl.communicationSkills">
+				<p><strong>{{ comm.lang }}:</strong> {{ comm.proficiency }}</p>
+			</div>
+		</div>
+
 	</div>
 </div>
