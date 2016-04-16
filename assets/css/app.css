@@ -18,7 +18,8 @@ body {
   height: 100%; }
 
 #header {
-  padding: 1.5% 0; }
+  padding: 1.5% 0;
+  display: none; }
 
 .header-list {
   padding: 0;
