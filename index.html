@@ -64,9 +64,11 @@
 
 			if (window.location.hash === "#/resume") {
 				$('#grid-container').hide();
+				$('#resume').show();
 				$('#resume-item').addClass("header-item-selected");
 			} else {
 				$('#portfolio-item').addClass("header-item-selected");
+				$('#resume').hide();
 			}
 
 		})
@@ -88,6 +90,7 @@
 
 			if (anchor === '') {
 				$('#grid-container').show();
+				$('#resume').hide();
 				$('#portfolio-item').addClass("header-item-selected");
 				$('#resume-item').removeClass("header-item-selected");
 				grid.masonry();
@@ -95,6 +98,7 @@
 			
 			else if (anchor === '#/resume') {
 				$('#grid-container').hide();
+				$('#resume').show();
 				$('#resume-item').addClass("header-item-selected");
 				$('#portfolio-item').removeClass("header-item-selected");
 			}
@@ -145,9 +149,9 @@
 	<!-- main content -->
   <div id="main-container" class="container">
     <div class="col-sm-10 col-md-offset-1">
-	    <div id="grid-container">
 
-		    <!-- projects loop -->
+			<!-- projects loop -->
+	    <div id="grid-container">
 				<div ng-controller="ProjectsController as projects">
 			    <div ng-repeat="project in projects.myProjects">
 						<div class="grid-item" ng-click="showProjectModal(project)">
@@ -165,8 +169,10 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
+
+		<!-- resume -->
+		<div resume id="resume"></div>
 		</div>
 	</div>
 
@@ -194,6 +200,8 @@
 	<script src="app/components/projects/projectsController.js"></script>
 	<script src="app/components/modal/modalController.js"></script>
 	<script src="app/components/headerbar/headerBar.js"></script>
+	<script src="app/components/resume/resumeController.js"></script>
+	<script src="app/components/resume/resumeDirective.js"></script>
 	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
 	<script src="app/components/contact-links/contactLinks.js"></script>
 	<script src="app/components/webglTrinkets/webglTrinkets.js"></script>
