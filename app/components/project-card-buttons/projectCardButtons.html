@@ -2,7 +2,7 @@
 <div ng-if="tryLink!=='' && sourceLink!=='' ">
   <div class="text-center">
     <div class="btn-group">
-      <a class="btn btn-vibrant" ng-href="{{tryLink}}" target="_blank"><i class="fa fa-lg fa-external-link"></i> {{ tryLinkDesc }}</a>
+      <a class="btn btn-warning" ng-href="{{tryLink}}" target="_blank"><i class="fa fa-lg fa-external-link"></i> {{ tryLinkDesc }}</a>
       <a class="btn btn-default" ng-href="{{ sourceLink }}" target="_blank"><i class="fa fa-lg fa-github"></i> {{ sourceLinkDesc }}</a>
     </div>
   </div>
@@ -11,7 +11,7 @@
 <!-- Only try link -->
 <div ng-if="tryLink!=='' && sourceLink=='' ">
   <div class="text-center">
-    <a class="btn btn-vibrant" ng-href="{{ tryLink }}" target="_blank"><i class="fa fa-lg fa-external-link"></i> {{ tryLinkDesc }}</a>
+    <a class="btn btn-warning" ng-href="{{ tryLink }}" target="_blank"><i class="fa fa-lg fa-external-link"></i> {{ tryLinkDesc }}</a>
   </div>
 </div>
 

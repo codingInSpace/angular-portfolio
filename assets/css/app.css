@@ -177,6 +177,9 @@ body {
   background-color: #e0ccff;
   border-color: #ccc; }
 
+.btn-text {
+  color: white !important; }
+
 .contact-links i {
   color: black;
   cursor: pointer; }
