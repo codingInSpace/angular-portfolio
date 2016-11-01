@@ -2,218 +2,219 @@
 <html ng-app="portfolioApp">
 <head>
 	<meta charset="utf-8">
-	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+	<meta name="google-site-verification" content="JD0lgadG1IGimT9MK2TrxUZkqrSPfyXXGjIVKrW9y7M" />
 	<title>Jonathan Grangien</title>
-	<!-- <meta name="description" content=""> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- angular libs -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
-
-	<!-- Modules -->
-	<script src="js/app.js"></script>
-
-	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 
-	<!-- fullPage -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.9/jquery.fullPage.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.9/jquery.fullPage.min.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.9/vendors/jquery.slimscroll.min.js"></script>
-
-	<!-- WOW -->
-	<!-- <script src="js/wow.min.js"></script> -->
-
-	<!-- Bootstrap and Bootcards-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/css/bootcards-desktop.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/js/bootcards.min.js"></script>
-	
-	<!-- Other CSS imports -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-	<!-- Custom css -->
-	<link rel="stylesheet" href="css/app.css">
-
-</head>
+	</head>
 <body>
+
+	<!-- jQuery crutches, to be replaced by angular functionality -->
 	<script>
 	$(document).ready(function() {
+		var grid;
 
-		// Hack to apply slimscroll options
-		var oldSlimScroll = $.fn.slimScroll;
-		$.fn.slimScroll = function( options ){
-			options.touchScrollStep = 75;
-			options.size = '5px';
-			return oldSlimScroll.apply(this, [options] );
-		};
+		$('#side-presentation').stick_in_parent();
+		var spinnerOptions = {
+		  lines: 11,
+		  length: 8,
+		  width: 6,
+		  radius: 25,
+		  scale: 0.8,
+		  corners: 0.9,
+		  color: '#000',
+		  opacity: 0.25,
+		  rotate: 0,
+		  direction: 1,
+		  speed: 3.2,
+		  trail: 81,
+		  fps: 24,	//"cinematic experience"
+		  zIndex: 2e9,
+		  className: 'spinner',
+		  top: '50%',
+		  left: '50%',
+		  shadow: true,
+		  hwaccel: true,
+		  position: 'absolute'
+		}
+		var target = document.getElementById('loading-screen')
+		var spinner = new Spinner(spinnerOptions).spin(target);
+		var countImages = $('#grid-container img').size();
 
-		// Initialize fullpage
-	    $('#fullpage').fullpage({
-	    	anchors: ['top', 'projects', 'contact'],
-	    	menu: '.pure-menu-list',
-	    	sectionsColor: ['', '#fff', 'rgb(1, 44, 61)'],
-	    	scrollOverflow: true,
-	    	navigation: true,
-			navigationPosition: 'right',
+		$('#grid-container').imagesLoaded()
 
-			// Change nav dot color before next page load
-			onLeave: function(index, nextIndex, direction){
-				switch(nextIndex) {
-					case 1:
-						$("#fp-nav").find("span").css("background", "white");
-						break;
-					case 2:
-						$("#fp-nav").find("span").css("background", "#333");
-						break;
-					case 3:
-						$("#fp-nav").find("span").css("background", "white");
-						break;
-				}
-			},
+		// when all images loaded or failed
+		.always( function(){
 
-			// Change nav dot color after page load, includes first page
-			afterLoad: function(anchorLink, index){
-				switch(index) {
-					case 1:
-						$("#fp-nav").find("span").css("background", "white");
-						break;
-					case 2:
-						$("#fp-nav").find("span").css("background", "#333");
-						break;
-					case 3:
-						$("#fp-nav").find("span").css("background", "white");
-						break;
-				}
+			$('#loading-screen').css("display", "none");
+			$('#header').show();
+			spinner.stop();
+
+			// initialize masonry
+			grid = $('#grid-container').masonry({
+				itemSelector: '.grid-item',
+				columnWidth: 0		//why and how.
+			});
+			
+			$('#main-container').css("visibility", "visible");
+			$('#side-presentation').css("visibility", "visible");
+			grid.masonry();
+
+			if (window.location.hash === "#/resume") {
+				$('#grid-container').hide();
+				$('#resume').show();
+				$('#resume-item').addClass("header-item-selected");
+			} else {
+				$('#portfolio-item').addClass("header-item-selected");
+				$('#resume').hide();
 			}
-	    });
 
-		// Click handlers for contact icons
-		$(".contact-links").find("#github").click(function() {
-			window.open('https://github.com/codingInSpace', '_blank');
-		});
-		$(".contact-links").find("#linkedin").click(function() {
-			window.open('https://linkedin.com/pub/jonathan-grangien/104/859/630', '_blank');
-		});
+		})
+		.progress( function( instance, image ) {
+			if(image.isLoaded) {
+
+				// update progress bar
+				$(image.img).addClass('loaded');
+				var countLoadedImages = $('#grid-container img.loaded').size();
+				var width = 100 * (countLoadedImages / countImages) + '%';
+				$('#progress-bar > #progress').css({ 'width' : width });
+			} else {
+				console.log("Image " + image.img.src + " failed to load");
+			}
+  	});
+
+  	$(window).bind( 'hashchange', function(e) { 
+			var anchor = document.location.hash;
+
+			if (anchor === '') {
+				$('#grid-container').show();
+				$('#resume').hide();
+				$('#portfolio-item').addClass("header-item-selected");
+				$('#resume-item').removeClass("header-item-selected");
+				grid.masonry();
+			}
+			
+			else if (anchor === '#/resume') {
+				$('#grid-container').hide();
+				$('#resume').show();
+				$('#resume-item').addClass("header-item-selected");
+				$('#portfolio-item').removeClass("header-item-selected");
+			}
+    });
 
 	});
 	</script>
 
-
-	<div class="header">
-        <div class="home-menu pure-menu pure-menu-horizontal">
-            <ul class="pure-menu-list">
-                <li data-menuanchor="top" id="presentation-link" class="pure-menu-item active">
-                	<a href="#top" class="pure-menu-link">About</a>
-                </li>
-                <li data-menuanchor="projects" id="projects-link" class="pure-menu-item">
-                	<a href="#projects" class="pure-menu-link">My Projects</a>
-                </li>
-                <li data-menuanchor="contact" id="contacts-link" class="pure-menu-item">
-                	<a href="#contact" class="pure-menu-link">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="fullpage">
-	    <div class="section active" id="section0">
-		    <div ng-controller="PresentationController as presentation">
-		    <div class="visible-xs">
-			    <br><br><br>
-			</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-md-5">
-							<!-- <h1>About me</h1> -->
-							<p>Bacon ipsum dolor amet tongue turducken kielbasa ham pig drumstick filet mignon bacon beef ribs pork chop pork loin. Doner pork landjaeger brisket ham. Boudin pork cupim tenderloin meatball. Ball tip cupim beef ribs, turkey spare ribs pork loin ham. </p>
-
-							<p>Meatloaf ham hock kielbasa tenderloin t-bone fatback landjaeger shankle sausage ball tip pancetta tri-tip hamburger venison. Beef ball tip sirloin tenderloin. Shank brisket jowl tail kevin leberkas shankle landjaeger kielbasa drumstick tongue.</p>
-						</div>
-						<div class="col-md-5 pull-right hidden-xs">
-							<img src="img/jonathan.png" style="width: 100%" class="img-circle" />
-						</div>
-						<div class="col-xs-8 col-xs-offset-2 visible-xs text-center">
-							<img src="img/jonathan.png" style="width: 100%;" class="img-circle" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="section" id="section1">
-			<div ng-controller="ProjectsController as projects">
-			    <br><br><br>
-				<div class="container">
-					<div class="row">
-
-						<!-- Project cards -->
-						<div ng-repeat="project in projects.myProjects">
-							<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0">
-								<!-- <div class="wow fadeIn"> -->
-									<div class="panel panel-default bootcards-media">
-									  <div class="panel-heading">
-									    <h3 class="panel-title">{{ project.title }}</h3>
-									  </div>
-									  <div class="panel-body">
-									  	{{ project.description }}
-									  </div>
-									  <img ng-src="{{ project.image }}" class="img-responsive"/>
-									  <div class="panel-body">
-									  	{{ project.teamDesc }}
-									  </div>
-
-									  <project-card-buttons item="project"></project-card-buttons>
-									</div>
-								<!-- </div> -->
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="section" id="section2">
-			<div class="visible-xs">
-			    <br><br><br>
-			</div>
-			<div class="container">
-				<div class="row">
-					<!-- mail form -->
-					<div class="mail-form">
-						<div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-2">
-							<h2>Email</h2>
-							<p>jonathan.grangien@gmail.com</p>
-							<form method="POST">
-								<label for="mail-field">Your email</label><br>
-								<input type="text" name="mail-field" class="mail-field"><br><br>
-								<label for="msg-field">Message</label><br>
-								<textarea name="msg-field"></textarea><br>
-								<input type="submit" value="Send message">
-							</form>
-							<br><br>
-						</div>
-					</div>
-
-					<!-- links -->
-					<div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-2">
-						<div class="contact-links">
-							<h2>Follow Me</h2>
-							<i id="github" class="fa fa-fw fa-3x fa-github-square"></i>
-							<i id="linkedin" class="fa fa-fw fa-3x fa-linkedin-square"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-
+  <!-- initial loading screen with loading spinner -->
+	<div id="loading-screen">
+		<div id="progress-bar">
+			<div id="progress"></div>
 		</div>
 	</div>
+
+	<!-- side presentation - invisible in phone view-->
+	<div id="side-presentation" class="hidden-xs">
+		<div class="ng-cloak" ng-controller="PresentationController as prez">
+    	<img src="assets/img/jonathan.png" class="img-circle">
+    	<h2>{{ prez.title }}</h2>
+    	<p>{{ prez.presentationText }}</p>
+			<div id="contact-info">
+				<p>{{ prez.mail }}</p>
+			</div>
+			<contact-links item="prez"></contact-links><br>
+		</div>
+		<div webgl-trinkets id="trinkets-container" ></div> 
+	</div>
+
+	<!-- top presentation - visible in phone view-->
+	<div id="top-presentation" class="visible-xs">
+		<div ng-controller="PresentationController as prez">
+  		<div class="container">
+	    	<div class="row">
+			    <div class="col-xs-12 ng-cloak">
+			    	<h2>{{ prez.title }}</h2>
+			    	<p>{{ prez.presentationText }}</p>
+						<contact-links item="prez"></contact-links>
+			    </div>
+		   </div>
+	    </div>
+		</div>
+	</div>
+
+	<div header-bar id="header"></div>
+
+	<!-- main content -->
+  <div id="main-container" class="container">
+    <div class="col-sm-10 col-md-offset-1">
+
+			<!-- projects loop -->
+	    <div id="grid-container">
+				<div ng-controller="ProjectsController as projects">
+			    <div ng-repeat="project in projects.myProjects">
+						<div class="grid-item" ng-click="showProjectModal(project)">
+							<img ng-src="{{ project.image }}">
+								<div class="card-inner ng-cloak">
+									<h2>{{ project.title }}</h2>
+									<p class="visible-xs">{{ project.descShort }}</p>
+								</div>
+								<div class="grid-mask ng-cloak">
+									<div>
+										<h2>{{ project.title }}</h2>
+										<p>{{ project.descShort }}</p>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- resume -->
+		<div resume id="resume"></div>
+		</div>
+	</div>
+
+	<!-- CSS imports -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/font-awesome-4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/remodal.css">
+	<link rel="stylesheet" href="assets/css/remodal-custom-theme.css">
+	<link rel="stylesheet" href="assets/css/app.css">
+
+	<!-- angular libs -->
+	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.min.js"></script>
+
+	<!-- angular modal service -->
+	<script src="assets/js/angular-modal-service.min.js"></script>
+
+	<!-- App -->
+	<script src="app/app.js"></script>
+	<script src="app/components/presentation/presentationController.js"></script>
+	<script src="app/components/projects/projectsController.js"></script>
+	<script src="app/components/modal/modalController.js"></script>
+	<script src="app/components/headerbar/headerBar.js"></script>
+	<script src="app/components/resume/resumeController.js"></script>
+	<script src="app/components/resume/resumeDirective.js"></script>
+	<script src="app/components/project-card-buttons/projectCardButtons.js"></script>
+	<script src="app/components/contact-links/contactLinks.js"></script>
+	<script src="app/components/webglTrinkets/webglTrinkets.js"></script>
+
+	<!--WebGL-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
+	<script src="assets/js/Tween.js"></script>
+
+	<!-- Other JS imports -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.sticky-kit/1.1.2/jquery.sticky-kit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+	<script src="assets/js/remodal.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 </html>
